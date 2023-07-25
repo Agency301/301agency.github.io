@@ -29,7 +29,7 @@ description:           >
   with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
-tagline:               '안녕하세요 컴퓨터공학부의 양기모, 박윤아입니다.'
+tagline:               '.'
 
 # A list of keywords for your blog
 keywords:              []
@@ -52,6 +52,8 @@ menu:
   - title:             Computer Vision Center
     url:               /example/
   - title:             Multi-modal Center
+    url:               /docs/
+  - title:             Modeling & Learning Dynamics Center
     url:               /docs/
   - title:             About Us
     url:               /about/
