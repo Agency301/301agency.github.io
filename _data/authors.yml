@@ -8,9 +8,9 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Hello. We are undergraduate students majoring in Computer Science & Engineering, Seoul National University.
+    We are going to post up-to-date paper reviews, code reviews, and some mathematics details on our website.
+    Please enjoy our articles and hope you'll get help.
     
     Open `_data/authors.yml` to edit this text.
 
