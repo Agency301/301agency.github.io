@@ -29,7 +29,7 @@ description:           >
   with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
-tagline:               'We are 301 Agents learning AI Models.'
+tagline:               'We are 301 Agents.'
 
 # A list of keywords for your blog
 keywords:              []
@@ -51,9 +51,13 @@ author:
 menu:
   - title:             Computer Vision Center
     url:               /example/
+  - title:             Natural Language Processing Center
+    url:               /docs/
   - title:             Multi-modal Center
     url:               /docs/
   - title:             Modeling & Learning Dynamics Center
+    url:               /docs/
+  - title:             Others
     url:               /docs/
   - title:             About Us
     url:               /about/
