@@ -15,7 +15,7 @@ redirect_from:
 
 ## Hydejack
 d
-# *AtlasYang* (Gilmo Yang)
+# **AtlasYang** (Gilmo Yang)
 ==============
 ## BIO
 ---------
@@ -23,7 +23,7 @@ Undergraduate Student majoring Computer Science & Engineering, Interested in Cog
 
 ## Organization
 --------
-*Seoul National University*, Dept. of Computer Science & Engineering
+**Seoul National University**, Dept. of Computer Science & Engineering
 
 AttentionX
 
