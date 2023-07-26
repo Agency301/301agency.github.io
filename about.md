@@ -29,11 +29,11 @@ AttentionX
 
 ## Contact
 --------
-E-mail: atlas.yang3598@gmail.com
+[E-mail](atlas.yang3598@gmail.com)
 
-GitHub: https://github.com/AtlasYang
+[GitHub](https://github.com/AtlasYang)
 
-Blog: https://blog.naver.com/epsilon2718
+[Blog](https://blog.naver.com/epsilon2718)
 
 
 
