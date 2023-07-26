@@ -14,6 +14,21 @@ redirect_from:
 <!--author-->
 
 ## Hydejack
+d
+## AtlasYang (Gilmo Yang)
+==
+# BIO
+--
+Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
+# Organization
+--
+Seoul National University, Dept. of Computer Science & Engineering
+AttentionX
+# Contact
+--
+E-mail: atlas.yang3598@gmail.com
+GitHub: https://github.com/AtlasYang
+Blog: https://blog.naver.com/epsilon2718
 
 A boutique Jekyll theme for hackers, nerds, and academics.  
 {:.lead}
