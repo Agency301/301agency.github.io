@@ -1,15 +1,15 @@
 # The primary author of this blog.
 # Must be the same as `author` in `_config.yml`.
 # Change `author1` to your shortname.
-author1:
-  name:              <firstname> <lastname>
-  email:             <mail@domain.tld>
+AtlasYang:
+  name:              Gilmo Yang
+  email:             epsilon2718@snu.ac.kr
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
     Hello. We are undergraduate students majoring in Computer Science & Engineering, Seoul National University.
-    We are going to post up-to-date paper reviews, code reviews, and some mathematics details on our website.
+    We are going to post up-to-date paper reviews, code reviews, and some mathematics details on various fields in Deep Learning and Reinforcement Learning.
     Please enjoy our articles and hope you'll get help.
 
     Open `_data/authors.yml` to edit this text.
@@ -67,9 +67,9 @@ author1:
     # keybase          <username>
 
 # Another author (optional)
-author2:
-  name:              <firtname> <lastname>
-  email:             <mail@domain.tld>
+CufftY:
+  name:              Yoonah Park
+  email:             wisdomsword21@snu.ac.kr
   about:             |
     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
