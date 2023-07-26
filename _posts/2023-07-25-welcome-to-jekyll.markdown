@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2023-07-25 23:28:26 +0900
 categories: jekyll update
+use_math: true
 ---
 
 
@@ -37,7 +38,7 @@ AutoML-Zero는 최대한 사람의 개입 없이 ML Architecture 를 구성하�
 - `train` function
 
     input으로 weight $w$, gradient $g$, learning rate $lr$을 받아 weight update를 output 하는 main objective이다. 즉, search의 객체이다.
-
+    
     historical value를 저장하는 extra variable을 둘 수 있다
 
 - building blocks

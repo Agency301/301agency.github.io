@@ -83,6 +83,14 @@ paginate:              10
 paginate_path:         /:num/
 
 
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
 # Theme
 # ---------------------------------------------------------------------------------------
 
