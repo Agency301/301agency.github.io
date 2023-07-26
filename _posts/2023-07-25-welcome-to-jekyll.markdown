@@ -8,12 +8,11 @@ categories: jekyll update
 
 -----------------------------
 
+# Symbolic Discovery of Optimization Algorithms (2023.5)
 
-#Symbolic Discovery of Optimization Algorithms (2023.5)
+## [Symbolic Discovery of Optimization Algorithms](https://arxiv.org/abs/2302.06675)
 
-##[Symbolic Discovery of Optimization Algorithms](https://arxiv.org/abs/2302.06675)
-
-##Introduction
+## Introduction
 
 이 논문은 AutoML-Zero 와 상당히 유사한 내용을 가지고 있다. 하단 링크 참고
 
@@ -27,7 +26,7 @@ AutoML-Zero는 최대한 사람의 개입 없이 ML Architecture 를 구성하�
 
 (1). 어차피 계산 하려면 프로그램으로 나타내야 한다 (2). 분석하기 편하고 다른 분야로 transfer가 용이하다 (3). 프로그램의 길이를 알고리즘의 복잡도를 추정하는데 사용할 수 있어, 더 간단하고 일반적인 알고리즘을 찾는데 도움이 된다.
 
-##Program search space designing
+## Program search space designing
 
 해당 논문에서는 program search space를 설계할 때 고려할 점을 3가지 밝힌다.
 
@@ -65,7 +64,7 @@ AutoML-Zero는 최대한 사람의 개입 없이 ML Architecture 를 구성하�
 
     high-performing program은 search space상에 sparse하게 존재하기 때문에, 이를 빠르게 search하기 위해 low-cost proxy task를 설정하여 evaluation하는 것으로 보인다.
 
-##Efficient search techniques
+## Efficient search techniques
 
 high-performing algorithm이 너무 sparse하게 존재하는 문제점 때문에 본 논문에서는 각종 search technique를 도입한다.
 
@@ -85,7 +84,7 @@ high-performing algorithm이 너무 sparse하게 존재하는 문제점 때문�
 
     low-cost proxy task로 search 진행. funnel selection과 연관.
 
-##Program selection methodology
+## Program selection methodology
 
 매우 큰 program space를 search하기 때문에 proxy task를 필연적으로 이용하게 되는데, proxy task와 target task의 차이, 그리고 다양한 domain에 적용될 수 있는 generalization 능력을 원하기 때문에, 학습과 활용에 큰 차이가 발생한다고 밝히고 있다. 이에 본 논문에서는 2가지 해결책을 사용한다.
 
@@ -103,7 +102,7 @@ high-performing algorithm이 너무 sparse하게 존재하는 문제점 때문�
 
     더 간단할 수록 generalization 능력이 높을 것이라는 직관에 의해, input과 output이 identical하거나, 없어져도 거의 영향을 미치지 않는 statement, function을 제거한다.
 
-##Proposition: Lion (EvoLved Sign Momentum) Optimizer
+## Proposition: Lion (EvoLved Sign Momentum) Optimizer
 
 ~~너무 억지 작명인 것 같다~~
 
@@ -129,7 +128,7 @@ high-performing algorithm이 너무 sparse하게 존재하는 문제점 때문�
 
     task에 따라 AdamW 보다 2-15% 가량의 속도 향상을 보였다.
 
-##Evaluation of Lion
+## Evaluation of Lion
 
 ViT, LiT, Autoregressive Model 등 다양한 task에 적용했는데 AdamW보다 항상 낫거나 비슷했다고 한다. benchmark table이 너무 많으니까 논문 참조.
 
