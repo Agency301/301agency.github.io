@@ -15,8 +15,8 @@ redirect_from:
 
 ## Hydejack
 d
+
 # **AtlasYang** (Gilmo Yang)
-==============
 ## BIO
 ---------
 Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
