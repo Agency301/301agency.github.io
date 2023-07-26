@@ -15,18 +15,18 @@ redirect_from:
 
 ## Hydejack
 d
-## *AtlasYang* (Gilmo Yang)
+# *AtlasYang* (Gilmo Yang)
 ===
-# BIO
+## BIO
 ---
 Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
 
-# Organization
+## Organization
 ---
 *Seoul National University*, Dept. of Computer Science & Engineering
 AttentionX
 
-# Contact
+## Contact
 ---
 E-mail: atlas.yang3598@gmail.com
 
