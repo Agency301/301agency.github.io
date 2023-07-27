@@ -84,11 +84,18 @@ paginate_path:         /:num/
 
 
 # Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
+#markdown: kramdown
+#highlighter: rouge
+#lsi: false
+#excerpt_separator: "\n\n"
+#incremental: false
+
+kramdown:
+math_engine: mathjax
+math_engine_opts: {}
+
+footnote_backlink: "&#x21a9;&#xfe0e;"
+
 
 
 # Theme
