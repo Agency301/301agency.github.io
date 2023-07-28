@@ -88,6 +88,7 @@ use_math: true
 ## BIO
 ----------
 Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
+Very Dangerous Girl, She has so many boyfriends
 
 ## Organization
 ----------

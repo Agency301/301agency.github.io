@@ -20,7 +20,7 @@ use_math: true
 {:.related-posts.faded}
 
 
-[Flamingo]: 2023-07-28-Flamingo.markdown
-[ImageBind]: 2023-07-28-ImageBind.markdown
-[Lens]: 2023-07-28-Lens.markdown
-[ViT]: /_posts/2023-07-28-ViT.markdown
+[Flamingo]: https://agency301.github.io/multi-modal/2023-07-28-Flamingo/  
+[ImageBind]: https://agency301.github.io/multi-modal/2023-07-28-ImageBind/
+[Lens]: https://agency301.github.io/multi-modal/2023-07-28-Lens/
+[ViT]: https://agency301.github.io/multi-modal/2023-07-28-ViT/
