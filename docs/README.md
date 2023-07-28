@@ -11,7 +11,7 @@ use_math: true
 
 - LLaVA (2023.7.26)
     
-    [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)
+    [Paper: <Visual Instruction Tuning> (arXiv)]](https://arxiv.org/abs/2304.08485)
     
     - Introduction
         - **LLaVA: Large Language and Vision Assistant**
