@@ -2,7 +2,7 @@
 layout: post
 title:  "Lens"
 date:   2023-07-28 13:31:28 +0900
-categories: jekyll update
+categories: Multi-modal
 use_math: true
 ---
 

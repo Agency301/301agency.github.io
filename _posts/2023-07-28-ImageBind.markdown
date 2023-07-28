@@ -2,7 +2,7 @@
 layout: post
 title:  "ImageBind"
 date:   2023-07-28 12:53:26 +0900
-categories: jekyll update
+categories: Multi-modal
 use_math: true
 ---
     

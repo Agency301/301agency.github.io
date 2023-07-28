@@ -23,4 +23,4 @@ use_math: true
 [Flamingo]: 2023-07-28-Flamingo.markdown
 [ImageBind]: 2023-07-28-ImageBind.markdown
 [Lens]: 2023-07-28-Lens.markdown
-[ViT]: 2023-07-28-ViT.markdown
+[ViT]: /_posts/2023-07-28-ViT.markdown
