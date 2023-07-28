@@ -21,7 +21,7 @@ use_math: true
 
 # </aside>
 
-# ![Untitled](assets\img\ImageBind/Untitled.png)
+# ![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled.png)
 
 # Natural Alignment: $(I, M)$간의 alignment → train
 ## encoders
@@ -34,7 +34,7 @@ $q_i=f(I_i)$, $k_i=g(M_i)$
 
 정확히는 $L_{I, M}+L_{M,I}$의 symmetric loss 사용함.
 
-![Untitled](assets\img\ImageBind/Untitled%201.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%201.png)
 
 τ: temparature. softmax distribution의 smoothness 결정
 
@@ -50,7 +50,7 @@ j: unrelated observation. 즉 mini-batch 내에서 negative pairs 나타냄
 ## result of Imagebind
 - “fair” baseline은 없지만, 기존의 audio-text aligning model을 사용하거나, depth, thermal 같은 visual-like modality의 경우 그냥 image로 보고 CLIP을 사용하고 이를 baseline삼음
 
-![Untitled](assets\img\ImageBind/Untitled%202.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%202.png)
 
 - Text paired가 존재하는 text와 pairing하여 훈련시킨 baseline. SOTA는 각 dataset에서 additional supervision이나 model ensemble을 써서 얻어낸 값으로, 함께 명시함.
 # Implementation & Training Details
@@ -85,18 +85,18 @@ j: unrelated observation. 즉 mini-batch 내에서 negative pairs 나타냄
 # Comparison to prior works
 ## Zero-shot text to audio retrieval and classification
 
-![Untitled](assets\img\ImageBind/Untitled%203.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%203.png)
 
 - 더 높거나 비견하는 결과
 ## Text to audio and video retrieval
 
-![Untitled](assets\img\ImageBind/Untitled%204.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%204.png)
 
 - text로부터 audio, video를 함께 retrieval하는 task에서 performance가 잘 나온 것은 pretrained OpenCLIP encoder들을 사용했기 때문으로 보임.
 - text로부터 audio만을 retrieval하는 task의 경우는 주목할만함. (emergent)
 ## Few-shot classification
 
-![Untitled](assets\img\ImageBind/Untitled%205.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%205.png)
 
 - 왼쪽 → self-supervised baseline인 AudioMAE보단 좋은 성능을 기록했으며, supervised model도 4shot까지는 넘어섬
 - 오른쪽 → MultiMAE를 완전히 넘어섬
@@ -104,19 +104,19 @@ j: unrelated observation. 즉 mini-batch 내에서 negative pairs 나타냄
 # Analysis and Application
 ## multimodal embedding space arithmetic
 
-![Untitled](assets\img\ImageBind/Untitled%206.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%206.png)
 
 ## upgrading text-based detectors to audio-based
 
 → object detection with audio queries
 
-![Untitled](assets\img\ImageBind/Untitled%207.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%207.png)
 
 ## upgrading text-based diffusion models to audio-based
 
 pretrained DALLE-2 diffusion model에서 prompt embedding을 audio embedding으로 바꾸어 실험함
 
-![Untitled](assets\img\ImageBind/Untitled%208.png)
+![Untitled](https://agency301.github.io/assets/img/ImageBind/Untitled%208.png)
 
 
 # CufftY (Yoonah Park)

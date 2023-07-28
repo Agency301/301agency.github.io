@@ -16,17 +16,17 @@ use_math: true
 # [paper review] Flamingo: a Visual Language Model for Few-Shot Learning (deepmind, 2022)
 ## Model Overview
 
-![Untitled](./assets/img/Flamingo/Untitled%201.png)
+![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%201.png)
 
 위 그림같이 image-text pair들의 sequence로 training하고 few-shot으로 돌릴 수 있음
 
-![Untitled](./assets/img/Flamingo/Untitled%202.png)
+![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%202.png)
 
 - y: text
 - x: conditioning images or videos
 ## Architecture
 
-![Untitled](./assets/img/Flamingo/Untitled.png)
+![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled.png)
 
 - Vision Encoder
     - Normalizer-Free ResNet (NFNet)-F6.
@@ -35,7 +35,7 @@ use_math: true
     - video input의 경우 1FPS마다 frame sampling하고, encode하고, temporal embedding을 더하여 3D feature를 얻으며, 이를 1D로 flatten함
 - Perceiver Resampler
 
-    ![Untitled](./assets/img/Flamingo/Untitled%203.png)
+    ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%203.png)
 
     - image 혹은 video feature 여러 개를 받아 64개의 fixed number visual tokens를 내보냄.
 - GATED XATTN-DENSE layers
@@ -43,7 +43,7 @@ use_math: true
     - vision input x를 key, value로, language input y를 query로 하여 cross attention함.
     - 이때 vision input은 Perceiver Resampler의 output이고, language input은 주어진 text들을 `<image> text1 <image> text2`와 같은 방식으로 이어붙인 것이다.
 
-    ![Untitled](./assets/img/Flamingo/Untitled%204.png)
+    ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%204.png)
 
     - use a tanh-gating mechanism → original model과 같은 결과가 나오도록 하기 위함, residual connection 전에 tanh실행
 ## Training
@@ -51,7 +51,7 @@ use_math: true
     - text-to-image cross-attention matrix를 masking하여 training함
     - visual input을 한 번에 하나씩 cross-attention하고 self-attention하기를 반복하며 최대 32-shot을 학습할 수 있음
 
-    ![Untitled](./assets/img/Flamingo/Untitled%205.png)
+    ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%205.png)
 
 - M3W: Interleaved image and text dataset
     - 43 million webpage의 HTML로부터 text와 image를 모두 얻고, DOM 기반으로 image와 text 사이의 관계를 추정함
@@ -60,22 +60,22 @@ use_math: true
     - ALIGN dataset, LTIP dataset (Long Text & Image Pair 직접 구축), VTP (Video & Text Pairs 직접 구축)
 - objective
 
-    ![Untitled](./assets/img/Flamingo/Untitled%206.png)
+    ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%206.png)
 
     - $\lambda_m$: weight per dataset. → key to performance!
 ## Results → 대충 SOTA 많이 달성했다는 얘기!
 - Few-Shot Results
     - outperforms by a large margin, SOTA!
 
-        ![Untitled](./assets/img/Flamingo/Untitled%207.png)
+        ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%207.png)
 
     - model 사이즈가 클수록 few-shot performance가 좋음. 물론 shot 개수 많을수록 performance가 좋음
 
-        ![Untitled](./assets/img/Flamingo/Untitled%208.png)
+        ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%208.png)
 
 - Fine-tuning Flamingo
 
-    ![Untitled](./assets/img/Flamingo/Untitled%209.png)
+    ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%209.png)
 
     fine-tuned ones are SOTA in many benchmarks
 
@@ -83,43 +83,7 @@ use_math: true
 
     대충 다 우리 방법이 맞았다는 소리
 
-    ![Untitled](./assets/img/Flamingo/Untitled%2010.png)
-
-
-# CufftY (Yoonah Park)
-## BIO
-----------
-Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
-
-## Organization
-----------
-Seoul National University, Dept. of Computer Science & Engineering
-
-AttentionX
-
-## Contact
-----------
-[E-mail](wisdomsword21@snu.ac.kr)
-
-[GitHub](https://github.com/gyuuuna)
-
-
-# CufftY (Yoonah Park)
-## BIO
-----------
-Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
-
-## Organization
-----------
-Seoul National University, Dept. of Computer Science & Engineering
-
-AttentionX
-
-## Contact
-----------
-[E-mail](wisdomsword21@snu.ac.kr)
-
-[GitHub](https://github.com/gyuuuna)
+    ![Untitled](https://agency301.github.io/assets/img/Flamingo/Untitled%2010.png)
 
 
 # CufftY (Yoonah Park)
