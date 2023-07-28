@@ -54,7 +54,7 @@ menu:
   - title:             Natural Language Processing
     url:               /docs/
   - title:             Multi-modal
-    url:               /multimodal/
+    url:               /_posts/multimodal/
   - title:             Modeling & Learning Dynamics
     url:               /docs/
   - title:             Others
