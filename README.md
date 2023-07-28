@@ -10,6 +10,6 @@
 
 ### 2. AtlasYang(Gilmo Yang)
 * Contact: atlas.yang3598@gmail.com
-* 서울대학교 컴퓨터 공학부 재학 중
+* 서울대학교 컴퓨터공학부 재학 중
 
-# [301 Agency Blog](agency301.github.io)
+# [301 Agency Blog](https://agency301.github.io)
