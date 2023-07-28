@@ -1,24 +1,15 @@
-<<<<<<< HEAD
-# Hydejack Starter Kit
+# 301 Agency
 
-A quicker, cleaner way to get started blogging with [Hydejack](https://hydejack.com/).
+301 Agency는 CV, NLP, RL, Learning Dynamics 등의 분야를 공부하고, 포스팅하는 학생들의 모임입니다.
 
-## Quick Start
-### Running locally
-1. Clone repository (git users), or [download] and unzip.
-2. Open terminal, `cd` into root directory (where `_config.yml` is located)
-3. Run `bundle install` [^1]
-4. Run `bundle exec jekyll serve`
-5. Open <http://localhost:4000/hydejack-starter-kit/>
+## Members
+### 1. CufftY(Yoonah Park)
+* Contact: wisdomsword21@snu.ac.kr
+* 서울대학교 컴퓨터공학부 재학 중
+* '여기에 설명을 추가하세요'
 
-## What's next?
-* Open files and read the comments
-* Read the [docs](https://hydejack.com/docs/)
-* Buy the [PRO version](https://hydejack.com/download/) to get the project and resume layout, newsletter subscription box, custom forms, and more.
+### 2. AtlasYang(Gilmo Yang)
+* Contact: atlas.yang3598@gmail.com
+* 서울대학교 컴퓨터 공학부 재학 중
 
-[^1]: Requires Bundler. Install with `gem install bundler`.
-
-[download]: https://github.com/hydecorp/hydejack-starter-kit/archive/master.zip
-=======
-# agency301.github.io
->>>>>>> 405ef810014b9cec46c355abb3d0b5b4c05b70b8
+# [301 Agency Blog](agency301.github.io)
