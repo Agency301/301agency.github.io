@@ -2,11 +2,9 @@
 layout: post
 title:  "Lens"
 date:   2023-07-28 13:31:28 +0900
-categories: Multi-modal
+categories: Multi-modal 
 use_math: true
 ---
-
------------------------------
 
 
 # ![Untitled](https://agency301.github.io/assets/img/Lens/Untitled.png)

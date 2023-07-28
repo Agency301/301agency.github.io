@@ -6,8 +6,6 @@ categories: Multi-modal
 use_math: true
 ---
 
------------------------------
-
 
 # [Flamingo: a Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198)
 

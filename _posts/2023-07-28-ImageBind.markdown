@@ -6,9 +6,7 @@ categories: Multi-modal
 use_math: true
 ---
     
-
------------------------------
-
+    
 # [ImageBind: One Embedding Space To Bind Them All](https://arxiv.org/abs/2305.05665)
 
 # Introduction
