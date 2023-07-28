@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "ImageBind"
+date:   2023-07-28 12:53:26 +0900
+categories: jekyll update
+use_math: true
+---
+    
+
+-----------------------------
 
 # [ImageBind: One Embedding Space To Bind Them All](https://arxiv.org/abs/2305.05665)
 
