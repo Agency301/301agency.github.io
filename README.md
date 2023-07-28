@@ -12,4 +12,4 @@
 * Contact: atlas.yang3598@gmail.com
 * 서울대학교 컴퓨터공학부 재학 중
 
-# [](https://agency301.github.io)
+# [301 Agency Blog URL](https://agency301.github.io)

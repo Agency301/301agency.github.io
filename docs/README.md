@@ -6,6 +6,7 @@ description: >
 hide_description: true
 sitemap: false
 permalink: /docs/
+use_math: true
 ---
 
 - LLaVA (2023.7.26)
