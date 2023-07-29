@@ -12,14 +12,13 @@ use_math: true
 자연어 처리에 관한 전반적인 논문을 다룹니다.
 이것도 보충해주세요 cufft님
 
-## ViT
-* [ViT]{:.heading.flip-title} --- An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+## Language Models
 {:.related-posts.faded}
 
-## Multi-Modal Models
-* [Flamingo]{:.heading.flip-title} --- Flamingo: a Visual Language Model for Few-Shot Learning
-* [ImageBind]{:.heading.flip-title} --- ImageBind: One Embedding Space To Bind Them All
-* [Lens]{:.heading.flip-title} --- Towards Language Models That Can See: Computer Vision Through the LENS of Natural Language
+## Word Embeddings
+{:.related-posts.faded}
+
+## Linguistics
 {:.related-posts.faded}
 
 

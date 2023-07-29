@@ -12,17 +12,14 @@ use_math: true
 컴퓨터 비전 분야의 논문을 다룹니다. 3D Reconstruction, Video Generation 등 컴퓨터 비전 분야의 최신 논문과 기반 지식을 다룹니다.
 
 ## GAN(Generative Adversarial Networks)
-* [cyclegan]{:.heading.flip-title} --- Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
+* [CycleGAN]{:.heading.flip-title} --- Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 {:.related-posts.faded}
 
 ## Diffusion Models
-{:.related-posts.faded}
-
-## ViT(Visual Transformers)
 {:.related-posts.faded}
 
 ## 3D Reconstruction
 {:.related-posts.faded}
 
 
-[cyclegan]: https://agency301.github.io/computer-vision/2023-07-29-Unpaired-Image-to-Image-Translation-using-Cycle-Consistent-Adversarial-Networks/
+[CycleGAN]: https://agency301.github.io/computer-vision/2023-07-29-Unpaired-Image-to-Image-Translation-using-Cycle-Consistent-Adversarial-Networks/

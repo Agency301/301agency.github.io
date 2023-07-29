@@ -11,16 +11,20 @@ use_math: true
 
 새로운 모델 아키텍쳐, 학습 방법론에 대한 논문의 리뷰입니다. Cognitive System, Evolutionary Algorithm 등 넓은 분야를 다룹니다.
 
-## ViT
-* [ViT]{:.heading.flip-title} --- An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+## Cognitive Systems
 {:.related-posts.faded}
 
-## Multi-Modal Models
-* [Flamingo]{:.heading.flip-title} --- Flamingo: a Visual Language Model for Few-Shot Learning
-* [ImageBind]{:.heading.flip-title} --- ImageBind: One Embedding Space To Bind Them All
-* [Lens]{:.heading.flip-title} --- Towards Language Models That Can See: Computer Vision Through the LENS of Natural Language
+## Evolutionary Algorithms
 {:.related-posts.faded}
 
+## Few-shot Learning
+{:.related-posts.faded}
+
+## Machine Learning
+{:.related-posts.faded}
+
+## Novel Modeling
+{:.related-posts.faded}
 
 [Flamingo]: https://agency301.github.io/multi-modal/2023-07-28-Flamingo/  
 [ImageBind]: https://agency301.github.io/multi-modal/2023-07-28-ImageBind/
