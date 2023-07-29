@@ -6,8 +6,6 @@ categories: Multi-modal
 use_math: true
 ---
 
-
-
 # Bio 2
 
 # Title: ViT is good
