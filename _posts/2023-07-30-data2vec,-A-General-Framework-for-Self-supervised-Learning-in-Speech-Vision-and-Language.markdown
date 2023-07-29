@@ -1,67 +1,103 @@
 ---
 layout: post
-title:  "data2vec, A General Framework for Self-supervised Learning in Speech Vision and Language"
-date:   2023-07-30 04:51:56 +0900
-categories: Multi-modal
+title:  "Encoding Recurrence into Transformers"
+date:   2023-07-30 05:15:23 +0900
+categories: modeling
 use_math: true
 ---
 
-# data2vec, A General Framework for Self-supervised Learning in Speech Vision and Language
+# Encoding Recurrence into Transformers
 
 
 
 ## Paper Review
 
-# data2vec, A General Framework for Self-supervised Learning in Speech Vision and Language
+# Encoding Recurrence into Transformers
 
-## [data2vec: A General Framework for Self-supervised Learning in...](https://arxiv.org/abs/2202.03555)
+## [](https://openreview.net/pdf?id=7YfHla7IxBJ)
 
 ## Introduction
 
-현재의 self-supervised learning의 한계는 한 modality에서 만든 알고리즘을 다른 modality에 적용하기 어렵다는 것이다. data2vec은 generalized representation learning의 일종으로, model-specific한 token, words 등을 예측하는 대신 전체 input space에서의 masked prediction을 통해 general latent variable을 만들어내는 것을 목표로 한다.
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled.png)
 
-## Prerequisites
-- Bootstrap Your Own Latent(BYOL)
-
-    [Bootstrap your own latent: A new approach to self-supervised Learning](https://arxiv.org/abs/2006.07733)
-
-    data2vec의 model architecture는 상당 부분 BYOL의 것을 차용하고 있다.
-
-    기존의 self-supervised learning에서는 positive sample만 사용할 경우 representation collapse가 발생하여 train loss는 감소하나 모두 같은 representation을 가지게 되는 문제점이 있어 negative sample을 이용한 contrastive learning이 필수적이었는데, BYOL은 negative sample 없이도 representation collapse를 발생시키지 않는 representation learning에 관한 내용이다.
-
-    ![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled.png)
-
-    training data $x$는 변환 $t, t'$를 통해 augmentation 되어 $v, v'$이 되고, 각각 online network와 target network에서 representation을 형성하게 된다. 각각의 층은 동일한 구조의 model을 사용하며, online network에서만 prediction network를 따로 둔다.
-
-    학습 방법은 online network와 target network의 output 사이의 L2 loss를 이용해서 backprop을 하는 것인데, target network에는 stop gradient(sg)를 적용해서 backprop을 하지 않는다. 대신 Exponentially Moving Average라는 방식을 이용해서 가중치를 업데이트 한다.
-
-    ![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%201.png)
-
-    2번째 식이 $\xi$(target network parameter)가 업데이트 되는 식이다. $\tau$ 는 0.996에서 시작하는 값으로, cosine annealing을 통해 1에 가까운 값이 되도록 time step에 따라 scheduling된다. 이 의미는 update 과정에서 초반에 $\theta$(online parameter)의 비중을 높게 가져가다가 나중에는 decay시키는 의미이다.
-
+문제 상황: RNN은 구조상, recurrency 가 높은 데이터에 대해서는 학습 데이터가 적어도 효율이 나오는데, transformer는 그렇지 않다. 다만 transformer는 학습 데이터셋 크기가 크면 data의 recurrency에 관계없이 효율이 나온다. 이 점에 착안하여 RNN이 recurrence를 잘 capture하는 특징과 Transformer의 Attention 매커니즘을 결합하여 sequential data에 대한 학습 효율을 증가시키자는 것이 골자이다.
 
 ## Model Architecture
 
+용어:
+
+RSA: Self-Attention with Recurrence, 이 논문에서 propose한 것
+
+REM: Recurrence Encoding Matrix, 여기에 rnn의 본질인 recurrence dynamics가 positional encoding의 형태로 담겨 있다.
+
+수식이 많은데 요점은…
+
+RNN은 원래 병렬 처리가 안된다. → 은닉층 가중치가 지수적으로 곱해지기 때문
+
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%201.png)
+
+$W^{j}_{h}$ 이 부분이 문제임 → 하지만 Jordan Form으로 semi-diagonalize하면 손실 조금만 나면서 행렬 정리 가능
+
 ![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%202.png)
 
-1. 같은 구조의 2가지 모델 - teacher model, student model을 생성한다.
-2. train data의 sample을 teacher model의 input으로, masked version을 student의 model의 input으로 사용한다.
-3. 각각의 model은 multi-layer model인데, (본 논문에서는 transformer encoder를 전제하였으나, 다른 모델도 사용 가능하다고 밝힘) student model은 teacher model의 top-K layer representation의 average를 이용하여 predicton함.
-    1. $y_t=\frac{1}{K}\Sigma^{L}_{l=L-K+1}\hat{a}^l_t$
-    2. top layer의 representation만을 학습하는 것보다 top-K 개의 layer에 대해서 학습하는 것이 성능이 좋았는데, average를 이용하면 효율성이 증대되었다고 함.
-4. teacher model의 parameter $\Delta$는 student model parameter $\theta$ 에 대해 EMA를 통해 update됨. (Knowledge Distillation)
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%203.png)
 
-    $\tau$는 linearly increase한다.
+위처럼 block RNN 구조로 바꾼 다음에 Self-Attention의 form 으로 이것을 표현하기 위해 아래와 같은 masking 행렬을 정의한다.
 
-    ![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%203.png)
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%204.png)
 
-5. Loss
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%205.png)
 
-    ![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%204.png)
+그리고 이것을 $h^{C_1}_{t}, h^{C_2}_{t}$에 대해서도 똑같이 정의하고, Multi-head Self-Attention에 넣어주면 된다.
 
-    $\beta$보다 작으면 L2 loss, 크면 L1 loss를 사용한다.
+결국 RNN의 Recurrence 를 Capture하는 능력이 REM에 담기게 되지만, 계산 상 Attention과는 큰 관련이 없는데, Attention이 non-recurrent한 데이터에 대한 성능도 뛰어나니까 gated unit 하나로 REM과 conventional Self-Attention을 통합한 것이 RSA이다.
 
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%206.png)
 
-*Backbone 모델:
+$P$가 REM이다. $\sigma(\mu)$는 learnable gate value이고, attention과 REM 을 사용하는 것의 비중을 정해준다.
 
-Visual data: Vit, Text data: RoBERTa, Speech data: fairseq(wav2vec)
+(data의 reccurence가 심한 경우 이 값이 크게 학습된다.)
+
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%207.png)
+
+derivation은 밑 토글 참조.
+
+암튼 RSA는 입력과 출력만 보았을 때 self-attention이랑 같기 때문에, 기존에 SA를 사용하던 Transformer 모델에 RSA를 대체로 넣어주기만 하면 되어서 편하다고 한다.
+
+그리고 Introduction에 있는 그림처럼 RSA를 쓰면 그냥 SA보다 표현력이 증가해서 여러 sequential data learning tasks에서 좋은 결과를 얻었다고 한다…(대단해 O~O)
+
+time series data를 이용한 비교이다. 본 논문에서 가장 recurrent한게 time series라고 밝혔듯이 확실히 개선된 결과를 보여준다. (prefix RSA가 붙은게 RSA를 대체로 쓴 모델이다)
+
+![Untitled](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/Untitled%208.png)
+
+이 외에도 벤치마크 몇 개 더 있는데 암튼 개선된 것 같다!
+
+## Mathmatics
+
+REM 식 derivation하는데 필요한 수학
+
+선대 열심히 할걸 ㅜ
+
+A. Jordan form
+
+![IMG_0044.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0044.jpeg)
+
+![IMG_0045.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0045.jpeg)
+
+![IMG_0046.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0046.jpeg)
+
+B. Applied Theorems
+
+![IMG_0047.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0047.jpeg)
+
+추가) 어떤 행렬이 eigenvalue로 어떤 complex를 가지면 그 conjugate도 eigenvalue이다
+
+RNN 표현
+
+![IMG_0049.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0049.jpeg)
+
+![IMG_0050.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0050.jpeg)
+
+![IMG_0052.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0052.jpeg)
+
+![IMG_0054.jpeg](https://agency301.github.io/assets/img/data2vec,-A-General-Framework-for-Self-supervised-Learning-in-Speech-Vision-and-Language/IMG_0054.jpeg)
