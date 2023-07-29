@@ -3,6 +3,7 @@ layout: post
 title:  "ViT"
 date:   2023-07-28 13:56:33 +0900
 categories: Multi-modal
+comments: true
 use_math: true
 ---
 
