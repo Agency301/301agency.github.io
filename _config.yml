@@ -52,13 +52,13 @@ menu:
   - title:             Computer Vision
     url:               /example/
   - title:             Natural Language Processing
-    url:               /docs/
+    url:               /nlp/
   - title:             Multi-modal
     url:               /multimodal/
   - title:             Modeling & Learning Dynamics
-    url:               /docs/
+    url:               /modeling/
   - title:             Others
-    url:               /docs/
+    url:               /others/
   - title:             About Us
     url:               /about/
 
