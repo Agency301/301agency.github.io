@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Computer Vision
+title: Mathematics
 description: >
   Here you should be able to find everything you need to know to accomplish the most common tasks when blogging with Hydejack.
 hide_description: True
 sitemap: false
-permalink: /cv/
+permalink: /mathematics/
 use_math: true
 ---
 
-컴퓨터 비전 분야의 논문을 다룹니다. 3D Reconstruction, Video Generation 등 컴퓨터 비전 분야의 최신 논문과 기반 지식을 다룹니다.
+AI 분야에서 필요한 수학 지식입니다. Calculus, Statistics, Linear Algebra 등의 분야를 다룹니다.
 
 ## ViT
 * [ViT]{:.heading.flip-title} --- An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale

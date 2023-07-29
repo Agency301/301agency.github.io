@@ -9,6 +9,9 @@ permalink: /multimodal/
 use_math: true
 ---
 
+자연어 처리에 관한 전반적인 논문을 다룹니다.
+이것도 보충해주세요 cufft님
+
 ## ViT
 * [ViT]{:.heading.flip-title} --- An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 {:.related-posts.faded}

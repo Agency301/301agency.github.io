@@ -9,6 +9,8 @@ permalink: /multimodal/
 use_math: true
 ---
 
+Cufft 님 여기 설명 좀 해주세요.
+
 ## ViT
 * [ViT]{:.heading.flip-title} --- An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 {:.related-posts.faded}

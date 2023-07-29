@@ -57,6 +57,8 @@ menu:
     url:               /multimodal/
   - title:             Modeling & Learning Dynamics
     url:               /modeling/
+  - title:             Mathematics
+    url:               /mathematics/
   - title:             Others
     url:               /others/
   - title:             About Us
