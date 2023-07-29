@@ -29,7 +29,7 @@ description:           >
   with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
-tagline:               'AI를 공부하는 학생들입니다.'
+tagline:               'AI Paper Readers'
 
 # A list of keywords for your blog
 keywords:              []
@@ -50,7 +50,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Computer Vision
-    url:               /example/
+    url:               /cv/
   - title:             Natural Language Processing
     url:               /nlp/
   - title:             Multi-modal
