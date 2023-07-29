@@ -2,7 +2,7 @@
 layout: post
 title:  "ViT-is-nice"
 date:   2023-07-29 11:30:22 +0900
-categories: Multimodal
+categories: Multi-modal
 use_math: true
 ---
 
