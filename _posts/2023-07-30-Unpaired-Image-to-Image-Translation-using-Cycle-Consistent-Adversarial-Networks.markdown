@@ -1,13 +1,11 @@
 ---
 layout: post
 title:  ""
-date:   2023-07-30 03:27:23 +0900
+date:   2023-07-30 03:31:42 +0900
 categories: 
 use_math: true
 ---
 
-
-> - Tags: CV
 
 ## Related Works
 
