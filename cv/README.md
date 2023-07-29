@@ -11,18 +11,18 @@ use_math: true
 
 컴퓨터 비전 분야의 논문을 다룹니다. 3D Reconstruction, Video Generation 등 컴퓨터 비전 분야의 최신 논문과 기반 지식을 다룹니다.
 
-## ViT
-* [ViT]{:.heading.flip-title} --- An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+## GAN(Generative Adversarial Networks)
+* [cyclegan]{:.heading.flip-title} --- Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 {:.related-posts.faded}
 
-## Multi-Modal Models
-* [Flamingo]{:.heading.flip-title} --- Flamingo: a Visual Language Model for Few-Shot Learning
-* [ImageBind]{:.heading.flip-title} --- ImageBind: One Embedding Space To Bind Them All
-* [Lens]{:.heading.flip-title} --- Towards Language Models That Can See: Computer Vision Through the LENS of Natural Language
+## Diffusion Models
+{:.related-posts.faded}
+
+## ViT(Visual Transformers)
+{:.related-posts.faded}
+
+## 3D Reconstruction
 {:.related-posts.faded}
 
 
-[Flamingo]: https://agency301.github.io/multi-modal/2023-07-28-Flamingo/  
-[ImageBind]: https://agency301.github.io/multi-modal/2023-07-28-ImageBind/
-[Lens]: https://agency301.github.io/multi-modal/2023-07-28-Lens/
-[ViT]: https://agency301.github.io/multi-modal/2023-07-28-ViT/
+[cyclegan]: https://agency301.github.io/computer-vision/2023-07-29-Unpaired-Image-to-Image-Translation-using-Cycle-Consistent-Adversarial-Networks/
