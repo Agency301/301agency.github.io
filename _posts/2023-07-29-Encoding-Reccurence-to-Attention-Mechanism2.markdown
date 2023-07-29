@@ -10,7 +10,7 @@ use_math: true
 
 # Encoding Recurrence into Transformers
 
-## [](https://openreview.net/pdf?id=7YfHla7IxBJ)
+## [Paper: Encoding Recurrence into Transformers](https://openreview.net/pdf?id=7YfHla7IxBJ)
 
 ## Introduction
 
