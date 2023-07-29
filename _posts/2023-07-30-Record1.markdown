@@ -6,43 +6,44 @@ categories: Others
 use_math: true
 ---
 
-# 블로그 작성기 1 - 2023.07.30.
+# 블로그 작성기 1 - AtlasYang
 
+별 거 한 것도 없는데 왠지 모르게 힘든 날이었습니다. 살인적인 더위 때문이 아닌가 싶습니다.
+
+평일에는 주로 학교에 9시까지 출근하듯이 등교하여 논문 리뷰를 하거나, 다른공부를 하고는 했는데, 토요일인 오늘 늦잠을 자고 말아 11시에 일어났습니다.
+
+그래서 Cufft님과 제가 자주 가는 카페에 오후 3시쯤 방문했는데, Cufft님이 안 계셨습니다. Cufft님이 분명 어제 오늘은 일찍 일어나서 생물학 공부를 하시겠다는 말을 하셨기 때문에, 점심을 먹고 집으로 가셨나보다 하는 생각을 했는데, 30분 정도 지나니 Cufft님이 카페에 오셨습니다.
+
+나: 점심 드시고 다시 오셨나봐요?
+Cufft: 아니요. 저 오늘 11시에 일어났는데요?
+
+뭐 저도 늦게 일어난 건 매한가지였기에 그냥 일종의 '쉬어가는 날'을 가진 것으로 생각하기로 했습니다.
+
+블로그에 대한 전반적인 얘기를 좀 하다가, 항상 Hydejack 테마의 sidebar background 이미지를 바꿔야겠다는 얘기가 나왔습니다. 어떤 사진으로 바꿀지 고민하다 못 바꾸고 있던 와중, 토의를 통해 학교 옥상에서 찍은 야경으로 바꾸기로 결정하였습니다. 그래서 오늘 저녁 9시쯤에 Cufft님과 학교 옥상에 방문하여 사진을 수십 장 찍어왔습니다.
 
 ![Untitled](https://agency301.github.io/assets/img/Record1/image2.jpg)
+
 ![Untitled](https://agency301.github.io/assets/img/Record1/image3.jpg)
+
 ![Untitled](https://agency301.github.io/assets/img/Record1/image4.jpg)
 
+저는 원래 야경의 밝은 느낌을 담으려 했었는데, 어쩌다 '느와르' 필터를 적용시켜 흑백 사진을 찍어보니 뭔가 분위기 있어 보였습니다.
 
+흑백 사진이 더 느낌 있어 보인다는 Cufft님의 의견에 따라, 흑백 야경 사진에, 적당한 건물-하늘 비율(?)을 가진 사진으로 사이드바의 배경 사진을 결정하였습니다.
 
+원래 오늘 계획은 사이드바 배경 사진만 바꾸고 나머지는 나중에 하려고 했는데, 생각해보니 Cufft님께서 노션에서 논문 리뷰 글을 export해서 마크다운 파일로 바꾸고, 사진 경로 재설정하고, repo로 push에 자동 포스팅까지 되는 엄청난 코드를 짜온 것을 생각하니 양심에 찔렸습니다. 
 
+참고로 저희는 편집이 쉬운 노션에서 글을 먼저 작성하고, 이를 조금 변형하여 포스팅으로 바꾸는 notion2blog 스크립트를 작성하여 포스팅에 이용할 예정입니다. 물론 코드는 Cufft님이 다 작성하셨습니다.
 
-
+명색이 공동 블로그인데.. 그래서 잘 이해도 되지 않는 각종 코드를 뜯어 보고 있습니다.
 
 ![Untitled](https://agency301.github.io/assets/img/Record1/image1.jpg)
 
+제대로된 개발을 안 한지 1년 반이 넘어서인지 코드를 보는 것이 굉장히 힘겹습니다. 1년 반을 왜 못했는지는 말하고 싶지 않습니다.
 
------------------
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+아무튼 notion2blog에 대한 포스팅은 Cufft님이 작성해주리라 믿고 저는 나머지 블로그 초기 설정을 마무리 하려 합니다. 초기 설정을 마무리 하려면 오늘 잠 자기는 어려울 것 같습니다. 
 
-Jekyll requires blog post files to be named according to the following format:
+다행히 오후에 먹은 아이스 아메리카노 덕분에 아직도 심장이 뛰는 것 같아 밤 새기는 수월할 듯 합니다.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+다음 블로그 작성기에서 찾아 뵙겠습니다.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
