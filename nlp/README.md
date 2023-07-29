@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Multi-modal
+title: Natural Language Processing
 description: >
   Here you should be able to find everything you need to know to accomplish the most common tasks when blogging with Hydejack.
 hide_description: True
 sitemap: false
-permalink: /multimodal/
+permalink: /nlp/
 use_math: true
 ---
 
