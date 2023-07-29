@@ -24,9 +24,7 @@ use_math: true
 {:.related-posts.faded}
 
 ## Novel Modeling
+* [RSA]{:.heading.flip-title} --- Encoding Recurrence into Transformers
 {:.related-posts.faded}
 
-[Flamingo]: https://agency301.github.io/multi-modal/2023-07-28-Flamingo/  
-[ImageBind]: https://agency301.github.io/multi-modal/2023-07-28-ImageBind/
-[Lens]: https://agency301.github.io/multi-modal/2023-07-28-Lens/
-[ViT]: https://agency301.github.io/multi-modal/2023-07-28-ViT/
+[RSA]: https://agency301.github.io/modeling/2023-07-29-Encoding-Recurrence-into-Transformers/
