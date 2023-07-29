@@ -11,7 +11,7 @@ redirect_from:
 
 # About
 
-
+<!--author-->
 
 
 A boutique Jekyll theme for hackers, nerds, and academics.  
