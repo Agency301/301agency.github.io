@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
-"
-date:   2023-07-30 03:37:57 +0900
+title:  "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks"
+date:   2023-07-30 03:43:30 +0900
 categories: Computer-Vision
-
 use_math: true
 ---
+
+# Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 
 
 
