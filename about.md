@@ -21,6 +21,8 @@ redirect_from:
 
 Contact: agency.py.301@gmail.com
 
+$$ f(x) = x_i + y^4 $$
+
 # Members
 ----------
 ## 1. Cufft (Yoonah Park)
