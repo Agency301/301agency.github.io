@@ -11,9 +11,6 @@ use_math: true
 
 새로운 모델 아키텍쳐, 학습 방법론에 대한 논문의 리뷰입니다. Cognitive System, Evolutionary Algorithm 등 넓은 분야를 다룹니다.
 
-## Cognitive Systems
-{:.related-posts.faded}
-
 ## Evolutionary Algorithms
 {:.related-posts.faded}
 

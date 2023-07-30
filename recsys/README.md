@@ -12,10 +12,13 @@ use_math: true
 이동호님 설명 추가해주세요
 
 ## item2vec
+{:.related-posts.faded}
 
 ## Matrix Factorization
+{:.related-posts.faded}
 
 ## user2user memory filtering
+{:.related-posts.faded}
 
 
 [Flamingo]: https://agency301.github.io/multi-modal/2023-07-28-Flamingo/  
