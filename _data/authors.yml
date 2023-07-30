@@ -8,11 +8,9 @@ AtlasYang:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Hello. We are undergraduate students majoring in Computer Science & Engineering, Seoul National University.
-    We are going to post up-to-date paper reviews, code reviews, and some mathematics details on various fields in Deep Learning and Reinforcement Learning.
-    Please enjoy our articles and hope you'll get help.
-
-    Open `_data/authors.yml` to edit this text.
+    301 Agency.
+    agency.py.301@gmail.com
+    
 
   # This photo will be used in the about section
   picture:
