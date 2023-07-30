@@ -25,38 +25,28 @@ Contact: agency.py.301@gmail.com
 # Members
 ----------
 ## 1. Cufft (Yoonah Park)
-### BIO
-----------
-Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.   
-Taking charge of Multi-modal, NLP Centers in 301 Agency      
-### Organization
-----------
-Seoul National University, Dept. of Computer Science & Engineering   
-AttentionX   
-301 Agency, Director   
-----------
-### Contact
-----------
-E-mail: wisdomsword21@snu.ac.kr   
-[GitHub](https://github.com/gyuuuna)   
-***
+> ### BIO
+> Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.   
+> Taking charge of Multi-modal, NLP Centers in 301 Agency      
+> ### Organization
+> Seoul National University, Dept. of Computer Science & Engineering   
+> AttentionX   
+> 301 Agency, Director   
+> ### Contact
+> E-mail: wisdomsword21@snu.ac.kr   
+> [GitHub](https://github.com/gyuuuna)   
 ## 2. AtlasYang (Gilmo Yang)
-### BIO
-----------
-Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
-
-Taking charge of CV, Learning Dynamics in 301 Agency
-### Organization
-----------
-Seoul National University, Dept. of Computer Science & Engineering   
-AttentionX   
-301 Agency, Agent 001   
-### Contact
-----------
-E-mail: epsilon2718@snu.ac.kr   
-[GitHub](https://github.com/AtlasYang)   
-[Blog](https://blog.naver.com/epsilon2718)   
-***
+> ### BIO
+> Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.   
+> Taking charge of CV, Learning Dynamics in 301 Agency   
+> ### Organization
+> Seoul National University, Dept. of Computer Science & Engineering   
+> AttentionX   
+> 301 Agency, Agent 001   
+> ### Contact
+> E-mail: epsilon2718@snu.ac.kr   
+> [GitHub](https://github.com/AtlasYang)   
+> [Blog](https://blog.naver.com/epsilon2718)   
 
 
 
