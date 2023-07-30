@@ -22,4 +22,4 @@ use_math: true
 {:.related-posts.faded}
 
 
-[CycleGAN]: https://agency301.github.io/computer-vision/2023-07-29-Unpaired-Image-to-Image-Translation-using-Cycle-Consistent-Adversarial-Networks/
+[CycleGAN]: https://agency301.github.io/computer-vision/2023-07-30-Unpaired-Image-to-Image-Translation-using-Cycle-Consistent-Adversarial-Networks/
