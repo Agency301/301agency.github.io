@@ -19,4 +19,4 @@ use_math: true
 
 
 [블로그 작성기 1]: https://agency301.github.io/others/2023-07-29-Record1/
-[블로그 작성기 2]: /2023-07-30-Record2/
+[블로그 작성기 2]: /2023-07-29-Record2/
