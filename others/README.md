@@ -13,8 +13,10 @@ use_math: true
 
 ## 블로그 작성기
 * [블로그 작성기 1]{:.heading.flip-title} --- 2023년 7월 29일
+* [블로그 작성기 2]{:.heading.flip-title} --- 2023년 7월 30일
 
 {:.related-posts.faded}
 
 
 [블로그 작성기 1]: https://agency301.github.io/others/2023-07-29-Record1/
+[블로그 작성기 2]: /2023-07-30-Record2/
