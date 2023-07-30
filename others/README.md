@@ -18,5 +18,5 @@ use_math: true
 {:.related-posts.faded}
 
 
-[블로그 작성기 1]: https://agency301.github.io/others/2023-07-29-Record1/
+[블로그 작성기 1]: ./2023-07-29-Record1/
 [블로그 작성기 2]: ./2023-07-29-Record2/
