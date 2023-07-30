@@ -25,11 +25,10 @@ title:                 301 Agency
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+  301 Agency is a blog for up-to-date AI Paper Reviews, posting mathematical details.
 
 # A shorter description for the sidebar.
-tagline:               'AI Paper Readers'
+tagline:               'AI is all we need'
 
 # A list of keywords for your blog
 keywords:              []
