@@ -50,7 +50,25 @@ $$ f(x) = x_i + y^4 $$
 > [GitHub](https://github.com/AtlasYang)
 > [Blog](https://blog.naver.com/epsilon2718)
 
+## 3. PeterPen (Hyunjun Kim)
+> ### BIO
+> Undergraduate Student majoring Electrical & Computational Engineering, Interested in Cognitive system, Neuromorphic computing. study.   
+> Taking charge of Neuromorphic Computing Center in 301 Agency
+> ### Organization
+> Seoul National University, Dept. of Electrical & Computational Engineering
+> 301 Agency, Agent 004
+> ### Contact
+> E-mail: doctor3390@snu.ac.kr 
 
+## 4. BigBrother (Dongho Yee)
+> ### BIO
+> Undergraduate Student majoring Mechanical Engineering, Interested in Recommandation systems and others.   
+> Taking charge of Recommendation System Center in 301 Agency
+> ### Organization
+> Seoul National University, Dept. of Mechanical Engineering
+> 301 Agency, Agent 007
+> ### Contact
+> E-mail: dongho0127@snu.ac.kr
 
 A boutique Jekyll theme for hackers, nerds, and academics.  
 {:.lead}
