@@ -34,6 +34,7 @@ Contact: agency.py.301@gmail.com
 > ### Contact
 > E-mail: wisdomsword21@snu.ac.kr   
 > [GitHub](https://github.com/gyuuuna)   
+
 ## 2. AtlasYang (Gilmo Yang)
 > ### BIO
 > Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.   
