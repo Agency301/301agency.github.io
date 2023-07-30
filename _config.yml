@@ -58,6 +58,10 @@ menu:
     url:               /nlp/
   - title:             Multi-modal
     url:               /multimodal/
+  - title:             Recommendation System
+    url:               /recsys/
+  - title:             Neural Computing
+    url:               /nc/
   - title:             Modeling & Learning Dynamics
     url:               /modeling/
   - title:             Mathematics
