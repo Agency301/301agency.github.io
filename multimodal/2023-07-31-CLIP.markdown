@@ -1,112 +1,89 @@
 ---
 layout: post
-title:  "CLIP"
-date:   2023-07-31 16:11:40 +0900
-categories: Multi-modal
+title:  "CLIP (2021.2, openAI)"
+date:   2023-07-31 20:20:52 +0900
+categories: multimodal
+author: Cufft
+tags: Multi-Modal
 use_math: true
 ---
 
-
-
 # CLIP (2021.2, openAI)
-## Title: CLIP (2021.2, openAI)
-## Bio: 2
-## Category: multimodal
-## Tags: Multi-Modal
-
-## Paper Review
-
-## Learning Transferable Visual Models From Natural Language Supervision (CLIP)
-
-[Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)
-
-**CLIP의 포인트 정리**
-
-- Introduction to CLIP
-    - Image & Text를 같은 representation space에 embedding함. (이 분야에서 선발주자이자 대표적인 모델인 듯)
-    - CLIP 이전의 연구에서는 정해진 vocabulary를 사용해 각 image와 word 사이의 관련도를 학습시킴. 이게 되려면 학습하고자 하는 모든 vocabulary에 대하여 labeled dataset을 마련해야 되는 상황. 또한 많은 모델들이 vocabulary를 0, 1, 2, … 순서대로 숫자로 치환해놓고 그냥 학습하는 바람에 text의 의미와 관련된 지식을 이용하지 못함
-    - CLIP에서는 효과적으로 학습 가능한 dataset 크기를 늘리기 위해 caption 또는 title이 image와 matching되어 있는 raw data를 수집함. (예시- instragram image와 설명 또는 파일제목)
-
-        이때, text의 경우 BPE 및 transformer embedding을 사용했기에 큰 raw data를 학습하기에 용이했음
-
-    - 기존보다 훨씬 많은 양의 dataset으로 학습 가능하고 (scale), 학습 dataset에 포함되지 않은 text에 대해서도 좀더 general하게 적용 가능하다는 점에서 획기적인 연구
-- Image & Text Encoder
-    - text는 text대로 text encoder를 이용해 embedding을 만들어내고, image는 image대로 image encoder를 이용해 embedding을 만들어 냄.
-    - Text Encoder
-        - Transformer(with masked attention), tokenizing은 BPE
-    - Image Encoder:
-        - ResNet 또는 Vision-Transformer (ViT) 이중에서 선택.
-
-    ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled.png)
 
 
-- Training
-    - contrastive learning (본래 contrastive learning이란 유사한 것들의 pair들을 만들어놓고, 정해둔 metric으로 유사한 것 간의 simlarity를 계산하는데, 이 similarity가 maximize되도록 하는 것.)
-    - Loss: multi-class N-pair loss
-        - batch 하나당 similar text-image pair N쌍이 주어짐.
-        - 가능한 모든 조합의 text-image pair N x N쌍에 대하여 cosine similarity를 구하며 학습함.
-        - N개의 similar text-image pair인 경우에는 cosine similarity를 최대화하고 N**2-1개의 similar하지 않은 pair의 경우에는 최소화하도록 함.
-        - symmetric cross entropy loss 사용
-            - pseudo code in the paper (figure 3)
 
-                ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled%201.png)
+> - Learning Transferable Visual Models From Natural Language Supervision (CLIP)
 
-            - 위 pseudo code를 봤을 때, 아래 그림 상에서 row별로, column별로 binary cross entropy loss를 구한 후 평균낸 것을 loss로 training하는 것으로 보임
+> [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)
 
-                ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled%202.png)
+> **CLIP의 포인트 정리**
 
+> - Introduction to CLIP
+> - Image & Text를 같은 representation space에 embedding함. (이 분야에서 선발주자이자 대표적인 모델인 듯)
+> - CLIP 이전의 연구에서는 정해진 vocabulary를 사용해 각 image와 word 사이의 관련도를 학습시킴. 이게 되려면 학습하고자 하는 모든 vocabulary에 대하여 labeled dataset을 마련해야 되는 상황. 또한 많은 모델들이 vocabulary를 0, 1, 2, … 순서대로 숫자로 치환해놓고 그냥 학습하는 바람에 text의 의미와 관련된 지식을 이용하지 못함
+> - CLIP에서는 효과적으로 학습 가능한 dataset 크기를 늘리기 위해 caption 또는 title이 image와 matching되어 있는 raw data를 수집함. (예시- instragram image와 설명 또는 파일제목)
 
-## Code Review
+> 이때, text의 경우 BPE 및 transformer embedding을 사용했기에 큰 raw data를 학습하기에 용이했음
 
-## https://github.com/openai/CLIP
-- model.py
-    - CLIP
+> - 기존보다 훨씬 많은 양의 dataset으로 학습 가능하고 (scale), 학습 dataset에 포함되지 않은 text에 대해서도 좀더 general하게 적용 가능하다는 점에서 획기적인 연구
+> - Image & Text Encoder
+> - text는 text대로 text encoder를 이용해 embedding을 만들어내고, image는 image대로 image encoder를 이용해 embedding을 만들어 냄.
+> - Text Encoder
+> - Transformer(with masked attention), tokenizing은 BPE
+> - Image Encoder:
+> - ResNet 또는 Vision-Transformer (ViT) 이중에서 선택.
 
-        ![Screenshot_20230713-221454_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221454_Samsung_Notes.jpg)
-
-    - ModifiedResNet
-
-        ![Screenshot_20230713-221756_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221756_Samsung_Notes.jpg)
-
-        - 보라색으로 표시한 부분들이 기존 ResNet50에서의 modification
-            - 기존 ResNet50 아키텍쳐
-
-                ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled%203.png)
-
-    - Transformer
-
-        ![Screenshot_20230713-221821_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221821_Samsung_Notes.jpg)
-
-    - VisionTransformer
-
-        ![Screenshot_20230713-221833_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221833_Samsung_Notes.jpg)
-
-- CLIP Training code
-    - https://github.com/openai/CLIP에는 training code가 없어서 누군가 공유한 training code를 가져옴
-
-        [https://github.com/openai/CLIP/issues/83](https://github.com/openai/CLIP/issues/83)
-
-        CLIP model에서 forwarding output이 logits_per_image & logits_per_text이므로, 바로 ground truth와 cross entropy 적용한 후 평균낸 것을 loss로 하여 학습
-
-- CLIP 사용 예제 cookbook인데 interesting하네요
-
-    [](https://github.com/openai/CLIP/blob/main/notebooks/Interacting_with_CLIP.ipynb)
+> ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled.png)
 
 
-# CufftY (Yoonah Park)
-## BIO
-----------
-Undergraduate Student majoring Computer Science & Engineering, Interested in Cognitive Architecture, Cellular Automata, and other DL, ML branches of study.
-Very Dangerous Girl, She has so many boyfriends
+> - Training
+> - contrastive learning (본래 contrastive learning이란 유사한 것들의 pair들을 만들어놓고, 정해둔 metric으로 유사한 것 간의 simlarity를 계산하는데, 이 similarity가 maximize되도록 하는 것.)
+> - Loss: multi-class N-pair loss
+> - batch 하나당 similar text-image pair N쌍이 주어짐.
+> - 가능한 모든 조합의 text-image pair N x N쌍에 대하여 cosine similarity를 구하며 학습함.
+> - N개의 similar text-image pair인 경우에는 cosine similarity를 최대화하고 N**2-1개의 similar하지 않은 pair의 경우에는 최소화하도록 함.
+> - symmetric cross entropy loss 사용
+> - pseudo code in the paper (figure 3)
 
-## Organization
-----------
-Seoul National University, Dept. of Computer Science & Engineering
+> ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled%201.png)
 
-AttentionX
+> - 위 pseudo code를 봤을 때, 아래 그림 상에서 row별로, column별로 binary cross entropy loss를 구한 후 평균낸 것을 loss로 training하는 것으로 보임
 
-## Contact
-----------
-[E-mail](wisdomsword21@snu.ac.kr)
+> ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled%202.png)
 
-[GitHub](https://github.com/gyuuuna)
+
+> Code Review
+
+> - https://github.com/openai/CLIP
+> - model.py
+> - CLIP
+
+> ![Screenshot_20230713-221454_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221454_Samsung_Notes.jpg)
+
+> - ModifiedResNet
+
+> ![Screenshot_20230713-221756_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221756_Samsung_Notes.jpg)
+
+> - 보라색으로 표시한 부분들이 기존 ResNet50에서의 modification
+> - 기존 ResNet50 아키텍쳐
+
+> ![Untitled](https://agency301.github.io/assets/img/CLIP/Untitled%203.png)
+
+> - Transformer
+
+> ![Screenshot_20230713-221821_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221821_Samsung_Notes.jpg)
+
+> - VisionTransformer
+
+> ![Screenshot_20230713-221833_Samsung Notes.jpg](https://agency301.github.io/assets/img/CLIP/Screenshot_20230713-221833_Samsung_Notes.jpg)
+
+> - CLIP Training code
+> - https://github.com/openai/CLIP에는 training code가 없어서 누군가 공유한 training code를 가져옴
+
+> [https://github.com/openai/CLIP/issues/83](https://github.com/openai/CLIP/issues/83)
+
+> CLIP model에서 forwarding output이 logits_per_image & logits_per_text이므로, 바로 ground truth와 cross entropy 적용한 후 평균낸 것을 loss로 하여 학습
+
+> - CLIP 사용 예제 cookbook인데 interesting하네요
+
+> [](https://github.com/openai/CLIP/blob/main/notebooks/Interacting_with_CLIP.ipynb)
