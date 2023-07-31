@@ -4,6 +4,7 @@ title:  "CLIP (2021.2, openAI)"
 date:   2023-08-01 00:22:16 +0900
 categories: multimodal
 tags: Multi-Modal
+author: Cufft
 use_math: true
 ---
 
