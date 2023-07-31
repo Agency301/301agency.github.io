@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CLIP (2021.2, openAI)"
-date:   2023-07-31 21:15:37 +0900
+date:   2023-07-31 21:21:05 +0900
 categories: multi-modal
 author: Cufft
 tags: Multi-Modal
@@ -9,7 +9,6 @@ use_math: true
 ---
 
 # CLIP (2021.2, openAI)
-
 
 
 ## Paper Review
