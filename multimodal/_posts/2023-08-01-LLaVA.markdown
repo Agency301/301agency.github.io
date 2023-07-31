@@ -9,8 +9,6 @@ author: Cufft
 use_math: true
 ---
 
-\\(I^{1+2}_a\\)
-
 # Visual Instruction Tuning (LLaVA)
 
 ## Paper Review
