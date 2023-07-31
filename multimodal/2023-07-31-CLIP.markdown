@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CLIP (2021.2, openAI)"
-date:   2023-07-31 20:38:36 +0900
+date:   2023-07-31 20:56:33 +0900
 categories: multi-modal
 author: Cufft
 tags: Multi-Modal
@@ -11,6 +11,7 @@ use_math: true
 # CLIP (2021.2, openAI)
 
 
+> Paper Review
 
 > - Learning Transferable Visual Models From Natural Language Supervision (CLIP)
 
