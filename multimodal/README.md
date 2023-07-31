@@ -33,4 +33,4 @@ Cufft 님 여기 설명 좀 해주세요.
 [ImageBind]: https://agency301.github.io/multi-modal/2023-07-28-ImageBind/
 [Lens]: https://agency301.github.io/multi-modal/2023-07-28-Lens/
 [ViT]: https://agency301.github.io/multi-modal/2023-07-28-ViT/
-[CLIP]: https://agency301.github.io/multimodal/2023-07-31-CLIP/
+[CLIP]: https://agency301.github.io/multimodal/2023-08-01-CLIP/
