@@ -2,9 +2,9 @@
 layout: post
 title:  "Visual Instruction Tuning (LLaVA)"
 date:   2023-08-01 00:40:15 +0900
-categories: multimodal
+categories: Others
 author: Cufft
-tags: Multi-Modal
+tags: LLaVA
 use_math: true
 ---
 
