@@ -9,6 +9,8 @@ author: Cufft
 use_math: true
 ---
 
+$x^{3*a}_k$
+
 # Visual Instruction Tuning (LLaVA)
 
 ## Paper Review
