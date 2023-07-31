@@ -2,7 +2,7 @@
 layout: post
 title:  "CLIP"
 date:   2023-07-31 16:11:40 +0900
-categories: multimodal
+categories: Multi-modal
 use_math: true
 ---
 
