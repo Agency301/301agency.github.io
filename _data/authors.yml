@@ -8,6 +8,9 @@ AtlasYang:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
+    > AtlasYang   
+    > Undergraduate Student majoring Computer Science & Engineering
+    >
     > 301 Agency   
     > AI 논문 리뷰하는 공대생들   
     > Contact: agency.py.301@gmail.com
@@ -71,7 +74,7 @@ Cufft:
   name:              Yoonah Park
   email:             wisdomsword21@snu.ac.kr
   about:             |
-    > Cufft
+    > Cufft   
     > Undergraduate Student majoring Computer Science & Engineering
     > 
     > 301 Agency   

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Denoising Diffusion Probabilistic Models(DDPM)"
-date:   2023-08-01 09:59:10 +0900
+date:   2023-08-01 10:11:01 +0900
 categories: cv
 author: AtlasYang
 tags: CV
@@ -11,26 +11,23 @@ use_math: true
 # Denoising Diffusion Probabilistic Models(DDPM)
 
 
-> ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled.png)
+# Paper Review
 
-> - Diffusion model introduction
-
-> Diffusion model은 물질의 확산에 기반한 diffusion process의 inverse process를 학습하는 과정을 통해 데이터를 생성하는 generative model이다.
-
-> Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusion mechanism을 통해 각 time step마다 데이터에 infinitesimal한 noise를 가해 결국에는 데이터와 independent한 noise를 만드는 과정이고, 두 번째는 diffusion의 reverse process를 모델링하여 random noise로부터 noise를 제거하여 원하는 데이터를 생성해내는 과정이다.
-
-> ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled.png)
-
-> 그림에서 $q(\bold{x}_t|\bold{x}_{t-1})$은 원본 데이터인 $\bold{x}_0$에 noise를 가하는 diffusion process이며, $p_\theta(\bold{x}_{t-1}|\bold{x}_t)$는 forward diffusion process의 reverse process로써 학습의 대상이다.
-
-> 각각의 process는 finite time 안에 이루어지는 discrete한 과정이며, parameterized Markov chain이라고 할 수 있다.
-
-
-## Paper Review
-
-### Denoising Diffusion Probabilistic Models (DDPM)
+## Denoising Diffusion Probabilistic Models (DDPM)
 
 [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
+
+- Diffusion model introduction
+
+    Diffusion model은 물질의 확산에 기반한 diffusion process의 inverse process를 학습하는 과정을 통해 데이터를 생성하는 generative model이다.
+
+    Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusion mechanism을 통해 각 time step마다 데이터에 infinitesimal한 noise를 가해 결국에는 데이터와 independent한 noise를 만드는 과정이고, 두 번째는 diffusion의 reverse process를 모델링하여 random noise로부터 noise를 제거하여 원하는 데이터를 생성해내는 과정이다.
+
+    ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled.png)
+
+    그림에서 $q(\bold{x}_t|\bold{x}_{t-1})$은 원본 데이터인 $\bold{x}_0$에 noise를 가하는 diffusion process이며, $p_\theta(\bold{x}_{t-1}|\bold{x}_t)$는 forward diffusion process의 reverse process로써 학습의 대상이다.
+
+    각각의 process는 finite time 안에 이루어지는 discrete한 과정이며, parameterized Markov chain이라고 할 수 있다.
 
 - Idea of reverse process & forward process
 
@@ -107,7 +104,7 @@ use_math: true
 
         → reparameterization trick, z는 N(0, I)
 
-### Other source
+## Other source
 
 [Diffusion Model 입문하기](https://velog.io/@bismute/Diffusion-Model-입문하기)
 
