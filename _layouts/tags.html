@@ -57,7 +57,7 @@ layout: page
 </style>
 
 <div class="tag-box">
-    <span class="tag" data-tag="show_all">전체보기</span>
+    <span class="tag" data-tag="show_all">Show All</span>
     {% for tag in site.data.tags %}
       <span class="tag" data-tag="{{ tag }}">{{ site.data.format[tag] }}</span>
     {% endfor %}
@@ -80,12 +80,13 @@ layout: page
 <script>
 
 /* random color logic */
-function getRandomColor() {
-    const hue = Math.floor(Math.random() * 360); // Random hue (0-359)
-  const saturation = 50 + Math.random() * 20; // Random saturation (50-70)
-  const lightness = 70 + Math.random() * 10; // Random lightness (70-80)
-  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-}
+function getRandomPastelColor() {
+    const red = Math.floor(150 + Math.random() * 50); // Random red channel (150-200)
+    const green = Math.floor(150 + Math.random() * 50); // Random green channel (150-200)
+    const blue = Math.floor(150 + Math.random() * 50); // Random blue channel (150-200)
+    return `rgb(${red}, ${green}, ${blue})`;
+  }
+  
 
 $(document).ready(() => {
     $("[data-tag]").each((index, elem) => {
