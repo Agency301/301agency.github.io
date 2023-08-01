@@ -3,10 +3,10 @@
 layout: list
 
 # The title of the tag's page.
-title: Modeling & Learning Dynamics
+title: Mathematics
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: multimodal
+slug: mathmatics
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
