@@ -60,17 +60,17 @@ $(document).ready(() => {
 
 function filterByTagName(tagName) {
     if (!tagName) {
-      $('.post-wrapper').removeClass('hidden');
-    } else {
-      $('.post-wrapper').each((index, elem) => {
-        if (!elem.hasAttribute(`data-${tagName}`)) {
-          $(elem).addClass('hidden');
-        } else {
-          $(elem).removeClass('hidden');
-        }
-      });
+        $('.post-wrapper').removeClass('hidden');
+      } else {
+        $('.hidden').removeClass('hidden');
+        $('.post-wrapper').each((index, elem) => {
+          if (!elem.hasAttribute(`data-${tagName}`)) {
+            $(elem).addClass('hidden');
+          }
+        });
+      }
+    
+      $(`.tag`).removeClass('selected');
+      $(`.tag[data-tag=${tagName}]`).addClass('selected');
     }
-  
-    $(`.tag`).removeClass('selected');
-    $(`.tag[data-tag=${tagName}]`).addClass('selected');
-}
+</script>
