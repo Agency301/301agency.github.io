@@ -3,7 +3,7 @@ layout: post
 title:  "Encoding Recurrence into Transformers"
 date:   2023-07-30 05:21:04 +0900
 categories: modeling
-tags: [transformer, modeling]
+tags: [transformer]
 comments: true
 use_math: true
 ---

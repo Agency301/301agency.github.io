@@ -3,7 +3,7 @@ layout: post
 title:  "ImageBind"
 date:   2023-07-28 12:53:26 +0900
 categories: multimodal
-tags: [multimodal, vlm]
+tags: [vlm]
 use_math: true
 ---
     

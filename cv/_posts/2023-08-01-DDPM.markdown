@@ -4,7 +4,7 @@ title:  "Denoising Diffusion Probabilistic Models(DDPM)"
 date:   2023-08-01 10:19:40 +0900
 categories: cv
 author: AtlasYang
-tags: [cv, diffusion]
+tags: [diffusion]
 comments: true
 use_math: true
 ---

@@ -3,7 +3,7 @@ layout: post
 title:  "Flamingo"
 date:   2023-07-28 13:21:37 +0900
 categories: multimodal
-tags: [multimodal, vlm]
+tags: [vlm]
 use_math: true
 ---
 

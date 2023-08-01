@@ -3,7 +3,7 @@ layout: post
 title:  "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks"
 date:   2023-07-30 16:49:21 +0900
 categories: Computer-Vision
-tags: [cv, gan]
+tags: [gan]
 comments: true
 use_math: true
 ---
