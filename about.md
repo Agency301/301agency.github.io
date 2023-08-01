@@ -11,7 +11,6 @@ redirect_from:
 
 # About
 
-<!--author-->
 
 # 301 Agency
 -------------   
