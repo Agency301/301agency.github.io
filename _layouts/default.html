@@ -27,12 +27,6 @@ layout: base
 
   {{ content }}
 
-  {% if page.tags %}
-    {% for tag in page.tags %}
-      <span class="tag">{{ tag }}</span>
-    {% endfor %}
-  {% endif %}
-
   <hr class="dingbat related"/>
 
   {% if site.posts.size > 0 %}

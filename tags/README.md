@@ -1,6 +1,6 @@
 ---
 # Featured tags need to have either the `list` or `grid` layout (PRO only).
-layout: default
+layout: list
 
 # The title of the tag's page.
 title: Tags
