@@ -107,6 +107,8 @@ Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusi
 
 ## Other source
 
+### Helo
+
 ### [Diffusion Model 입문하기](https://velog.io/@bismute/Diffusion-Model-입문하기)
 
 ### [Denoising Diffusion Probabilistic Models 논문 리뷰 (DDPM 설명, DDPM 증명)](https://process-mining.tistory.com/188)
