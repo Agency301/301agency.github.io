@@ -68,6 +68,8 @@ menu:
     url:               /mathematics/
   - title:             Others
     url:               /others/
+  - title:             Tags
+    url:               /tags/
   - title:             About Us
     url:               /about/
 
