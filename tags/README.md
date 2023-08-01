@@ -9,8 +9,8 @@ title: Tags
 slug: tags
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
-# description: > 
-# 태그합니다.
+description: > 
+  When you click on the tag you're interested in, the relevant posts will be displayed.
 
 # (Optional) You can disable grouping posts by date.
 # no_groups: true
@@ -19,5 +19,3 @@ slug: tags
 # DON'T USE THIS SETTING IN YOUR CATEGORIES!
 sitemap: false
 ---
-
-> When you click on the tag you're interested in, the relevant posts will be displayed.

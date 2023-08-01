@@ -25,16 +25,6 @@ layout: page
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      white-space: nowrap; 
-    }
-    
-    .tag {
-      display: inline-block;
-      padding: 6px 12px;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      cursor: pointer;
     }
 
     .tag {
@@ -47,7 +37,7 @@ layout: page
     }
 
     .tag-space {
-        height: 20px;
+        height: 60px;
     }
     
     .tag.selected {
@@ -91,14 +81,13 @@ layout: page
 <script>
 
 /* random color logic */
-
 function getRandomColor() {
     const hue = Math.floor(Math.random() * 360); // Random hue (0-359)
   const saturation = 25 + Math.floor(Math.random() * 50); // Random saturation (25-75)
   const lightness = 70 + Math.floor(Math.random() * 10); // Random lightness (70-80)
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
-    
+
 $(document).ready(() => {
     $("[data-tag]").each((index, elem) => {
         const randomColor = getRandomColor();
@@ -112,14 +101,6 @@ $(document).ready(() => {
 });
 
 /* filtering logic */
-
-$(document).ready(() => {
-  $("[data-tag]").click((e) => {
-    const currentTag = e.target.dataset.tag;
-    filterByTagName(currentTag);
-  });
-});
-
 function filterByTagName(tagName) {
     if (!tagName) {
         $('.post-wrapper').removeClass('hidden');
