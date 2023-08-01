@@ -30,7 +30,7 @@ layout: base
   <hr class="dingbat related"/>
 
   {% if site.posts.size > 0 %}
-    <h2 class="hr-bottom">{{ strings.posts | default:"Latest Posts" }}</h2>
+    <h2 class="hr-bottom">Latest Posts</h2>
     <ul class="related-posts">
       {% for post in site.posts limit:5 %}
         {% include_cached components/post-list-item.html post=post %}
