@@ -17,6 +17,9 @@
 layout: page
 ---
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ site.baseurl }}/_layouts/filter.js"></script>
+
 {% for tag in site.data.tags %}
   <span class="tag" data-tag="{{tag}}">
     {{ site.data.format[tag] }}
@@ -32,27 +35,7 @@ layout: page
     {% endif %}
   >
     <article class="post-preview">
-      ...
+      {{ post }}
     </article>
   </div>
 {% endfor %}
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-    $("[data-tag]").click((e) => {
-    currentTag = e.target.dataset.tag;
-    filterByTagName(currentTag);
-    })
-
-    function filterByTagName(tagName) {
-    $('.hidden').removeClass('hidden');
-    $('.post-wrapper').each((index, elem) => {
-        if (!elem.hasAttribute(`data-${tagName}`)) {
-        $(elem).addClass('hidden');
-        }
-    });
-    $(`.tag`).removeClass('selected');
-    $(`.tag[data-tag=${tagName}]`).addClass('selected');
-    }
-</script>
