@@ -17,6 +17,19 @@
 layout: page
 ---
 
+<style>
+    .hidden {
+      display: none !important;
+    }
+</style>
+
+<style>
+    .tag.selected {
+      background-color: #007bff;
+      color: white;
+    }
+</style>
+
 {% for tag in site.data.tags %}
   <span class="tag" data-tag="{{tag}}">
     {{ site.data.format[tag] }}
