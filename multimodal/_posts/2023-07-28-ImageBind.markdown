@@ -2,7 +2,7 @@
 layout: post
 title:  "ImageBind"
 date:   2023-07-28 12:53:26 +0900
-categories: Multi-modal
+categories: multimodal
 use_math: true
 ---
     
