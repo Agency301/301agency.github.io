@@ -18,23 +18,51 @@ layout: page
 ---
 
 <style>
-    .hidden {
-      display: none !important;
+    .tag-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
-</style>
+    
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-<style>
+    .tag-space {
+        height: 20px;
+    }
+    
     .tag.selected {
       background-color: #007bff;
       color: white;
     }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .tag.selected {
+        background-color: #007bff;
+        color: white;
+    }
+
 </style>
 
-{% for tag in site.data.tags %}
-  <span class="tag" data-tag="{{tag}}">
-    {{ site.data.format[tag] }}
-  </span>
-{% endfor %}
+<div class="tag-box">
+    {% for tag in site.data.tags %}
+      <span class="tag" data-tag="{{ tag }}">{{ site.data.format[tag] }}</span>
+    {% endfor %}
+</div>
+
+<div class="tag-space"></div>
 
 {% for post in site.posts %}
   <div class="post-wrapper"
