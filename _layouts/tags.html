@@ -29,9 +29,9 @@ layout: page
 
     .tag {
         display: inline-block;
-        padding: 4px 8px; 
-        margin: 4px; 
-        border-radius: 8px; 
+        padding: 3px 12px; 
+        margin: 2px; 
+        border-radius: 6px; 
         cursor: pointer;
         color: #fff;
     }
@@ -50,7 +50,7 @@ layout: page
     }
 
     .tag.selected {
-        background-color: #007bff;
+        background-color: black;
         color: white;
     }
 
@@ -61,8 +61,6 @@ layout: page
       <span class="tag" data-tag="{{ tag }}">{{ site.data.format[tag] }}</span>
     {% endfor %}
 </div>
-
-<div class="tag-space"></div>
 
 {% for post in site.posts %}
   <div class="post-wrapper"
@@ -82,12 +80,10 @@ layout: page
 
 /* random color logic */
 function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+    const hue = Math.floor(Math.random() * 360); // Random hue (0-359)
+  const saturation = 50 + Math.random() * 20; // Random saturation (50-70)
+  const lightness = 70 + Math.random() * 10; // Random lightness (70-80)
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
 $(document).ready(() => {
