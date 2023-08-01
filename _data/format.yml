@@ -1,4 +1,8 @@
-nlp: NLP
 vlm: VLM
 modeling: Modeling
 multimodal: Multi-Modal
+transformer: Transformer
+gan: GAN
+vit: Vision-Transformer
+diffision: Diffusion
+cv: Computer-Vision

@@ -3,7 +3,7 @@ layout: post
 title:  "Visual Instruction Tuning (LLaVA)"
 date:   2023-08-01 00:40:15 +0900
 categories: multimodal
-tags: multimodal
+tags: [multimodal, vlm]
 author_profile: true
 author: Cufft
 use_math: true
