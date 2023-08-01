@@ -24,7 +24,7 @@ layout: page
       gap: 8px;
       padding: 8px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 8px;
     }
 
     .tag {
@@ -81,10 +81,24 @@ layout: page
 
 /* random color logic */
 function getRandomColor() {
-    const red = Math.floor(150 + Math.random() * 50); // Random red channel (150-200)
-    const green = Math.floor(150 + Math.random() * 50); // Random green channel (150-200)
-    const blue = Math.floor(150 + Math.random() * 50); // Random blue channel (150-200)
-    return `rgb(${red}, ${green}, ${blue})`;
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+  
+    // Convert hex to RGB
+    const red = parseInt(color.substr(1, 2), 16);
+    const green = parseInt(color.substr(3, 2), 16);
+    const blue = parseInt(color.substr(5, 2), 16);
+  
+    // Limit RGB values to 150-200 range
+    const pastelRed = Math.floor(150 + (red % 51));    // 150 + remainder of (0-50)
+    const pastelGreen = Math.floor(150 + (green % 51)); // 150 + remainder of (0-50)
+    const pastelBlue = Math.floor(150 + (blue % 51));   // 150 + remainder of (0-50)
+  
+    // Convert back to hex and return the pastel color
+    return `#${(pastelRed * 256 * 256 + pastelGreen * 256 + pastelBlue).toString(16).padStart(6, '0')}`;
   }
   
 
