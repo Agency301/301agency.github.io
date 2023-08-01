@@ -57,6 +57,7 @@ layout: page
 </style>
 
 <div class="tag-box">
+    <span class="tag" data-tag="show_all">전체보기</span>
     {% for tag in site.data.tags %}
       <span class="tag" data-tag="{{ tag }}">{{ site.data.format[tag] }}</span>
     {% endfor %}
@@ -100,9 +101,9 @@ $(document).ready(() => {
 
 /* filtering logic */
 function filterByTagName(tagName) {
-    if (!tagName) {
-        $('.post-wrapper').removeClass('hidden');
-      } else {
+    if (tagName === 'show_all') { 
+        $('.post-wrapper').removeClass('hidden'); 
+    } else {
         $('.hidden').removeClass('hidden');
         $('.post-wrapper').each((index, elem) => {
           if (!elem.hasAttribute(`data-${tagName}`)) {
