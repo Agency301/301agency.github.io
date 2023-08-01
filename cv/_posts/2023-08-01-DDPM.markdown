@@ -26,7 +26,7 @@ Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusi
 
 ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled.png)
 
-그림에서 $q(\bold{x}_t|\bold{x}_{t-1})$은 원본 데이터인 $\bold{x}_0$에 noise를 가하는 diffusion process이며, $p_\theta(\bold{x}_{t-1}|\bold{x}_t)$는 forward diffusion process의 reverse process로써 학습의 대상이다.
+그림에서 $q(\bold{x}_t\vert\bold{x}_{t-1})$은 원본 데이터인 $\bold{x}_0$에 noise를 가하는 diffusion process이며, $p_\theta(\bold{x}_{t-1}\vert\bold{x}_t)$는 forward diffusion process의 reverse process로써 학습의 대상이다.
 
 각각의 process는 finite time 안에 이루어지는 discrete한 과정이며, parameterized Markov chain이라고 할 수 있다.
 
@@ -42,7 +42,7 @@ Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusi
 
 ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%203.png)
 
-### Approximation of $q(x_t|x_0)$
+### Approximation of $q(x_t\vertx_0)$
 
 ![Screenshot_20230710-204950_Samsung Notes.jpg](https://agency301.github.io/assets/img/DDPM/Screenshot_20230710-204950_Samsung_Notes.jpg)
 
@@ -53,7 +53,7 @@ Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusi
     ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%204.png)
 
 
-### Parameterization of $p_{\theta}(x_{t-1}|x_t)$
+### Parameterization of $p_{\theta}(x_{t-1}\vertx_t)$
 
 ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%205.png)
 
@@ -93,11 +93,11 @@ Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusi
 
         $\mu$를 근사하기 위하여 $\mu_{\theta}$를 학습하는 것인데, parameterization을 수정함으로써 $\epsilon$를 학습하도록 훈련할 수 있다는 것.
 
-        - model object가 $q(x_{t-1}|x_t, x_0)$와 $p_{\theta}(x_{t-1}|x_t)$의 분포를 유사하게 하는 것인데, 이는 곧 $\mu_{\theta}$와 $\tilde{\mu}$의 MSE를 최소화하는 것. 이때 $\tilde{\mu}$는 $x_0, x_t$에 대한 함수임.
+        - model object가 $q(x_{t-1}\vertx_t, x_0)$와 $p_{\theta}(x_{t-1}\vertx_t)$의 분포를 유사하게 하는 것인데, 이는 곧 $\mu_{\theta}$와 $\tilde{\mu}$의 MSE를 최소화하는 것. 이때 $\tilde{\mu}$는 $x_0, x_t$에 대한 함수임.
         - 여기에서 새로운 parameter $\epsilon$을 등장시킴. 앞서서 $x_t$를 $x_0$으로부터 sampling한 것으로 볼 수 있다고 했는데, 이에 reparameterization trick을 적용했을 때, 표준정규분포로부터 sampling한 noise의 값이 $\epsilon$.
         - $\epsilon_{\theta}$와 $\epsilon$ 사이의 MSE를 최소화하도록 loss를 simplify할 수 있음
 
-3. To sample $x_{t-1}$~$p_{\theta}(x_{t-1}|x_t)$
+3. To sample $x_{t-1}$~$p_{\theta}(x_{t-1}\vertx_t)$
 
     compute
 
