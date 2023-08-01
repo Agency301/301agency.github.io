@@ -2,4 +2,4 @@ vlm: VLM
 transformer: Transformer
 gan: GAN
 vit: Vision-Transformer
-diffision: Diffusion
+diffusion: Diffusion
