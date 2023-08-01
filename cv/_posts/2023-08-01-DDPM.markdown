@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "Denoising Diffusion Probabilistic Models(DDPM)"
+date:   2023-08-01 09:59:10 +0900
+categories: cv
+author: AtlasYang
+tags: CV
+use_math: true
+---
+
+# Denoising Diffusion Probabilistic Models(DDPM)
+
+
+> ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled.png)
+
+> - Diffusion model introduction
+
+> Diffusion model은 물질의 확산에 기반한 diffusion process의 inverse process를 학습하는 과정을 통해 데이터를 생성하는 generative model이다.
+
+> Diffusion model의 process는 크게 2개로 나뉘는데, 첫 번째는 diffusion mechanism을 통해 각 time step마다 데이터에 infinitesimal한 noise를 가해 결국에는 데이터와 independent한 noise를 만드는 과정이고, 두 번째는 diffusion의 reverse process를 모델링하여 random noise로부터 noise를 제거하여 원하는 데이터를 생성해내는 과정이다.
+
+> ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled.png)
+
+> 그림에서 $q(\bold{x}_t|\bold{x}_{t-1})$은 원본 데이터인 $\bold{x}_0$에 noise를 가하는 diffusion process이며, $p_\theta(\bold{x}_{t-1}|\bold{x}_t)$는 forward diffusion process의 reverse process로써 학습의 대상이다.
+
+> 각각의 process는 finite time 안에 이루어지는 discrete한 과정이며, parameterized Markov chain이라고 할 수 있다.
+
+
+## Paper Review
+
+### Denoising Diffusion Probabilistic Models (DDPM)
+
+[Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
+
+- Idea of reverse process & forward process
+
+    ![Screenshot_20230711-171451_Samsung Notes.jpg](https://agency301.github.io/assets/img/DDPM/Screenshot_20230711-171451_Samsung_Notes.jpg)
+
+- Loss derivation (Appendix A)
+
+    ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%201.png)
+
+    ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%202.png)
+
+    ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%203.png)
+
+- Approximation of $q(x_t|x_0)$
+
+    ![Screenshot_20230710-204950_Samsung Notes.jpg](https://agency301.github.io/assets/img/DDPM/Screenshot_20230710-204950_Samsung_Notes.jpg)
+
+    - proof
+
+        [What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%204.png)
+
+
+- Parameterization of $p_{\theta}(x_{t-1}|x_t)$
+
+    ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%205.png)
+
+    1. $\sum_{\theta}(x_t, t)$
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%206.png)
+
+        - when
+
+            ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%207.png)
+
+            or (similar results)
+
+            ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%208.png)
+
+    2. $\mu_{\theta}(x_t, t)$
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%209.png)
+
+        when parameterized
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%2010.png)
+
+        then
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%2011.png)
+
+        thus, $\mu_{\theta}(x_t, t)$ is parameterized to
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%2012.png)
+
+        using this, $L_{t-1}-C$ can be simplified to
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%2013.png)
+
+        - 메모
+
+            $\mu$를 근사하기 위하여 $\mu_{\theta}$를 학습하는 것인데, parameterization을 수정함으로써 $\epsilon$를 학습하도록 훈련할 수 있다는 것.
+
+            - model object가 $q(x_{t-1}|x_t, x_0)$와 $p_{\theta}(x_{t-1}|x_t)$의 분포를 유사하게 하는 것인데, 이는 곧 $\mu_{\theta}$와 $\tilde{\mu}$의 MSE를 최소화하는 것. 이때 $\tilde{\mu}$는 $x_0, x_t$에 대한 함수임.
+            - 여기에서 새로운 parameter $\epsilon$을 등장시킴. 앞서서 $x_t$를 $x_0$으로부터 sampling한 것으로 볼 수 있다고 했는데, 이에 reparameterization trick을 적용했을 때, 표준정규분포로부터 sampling한 noise의 값이 $\epsilon$.
+            - $\epsilon_{\theta}$와 $\epsilon$ 사이의 MSE를 최소화하도록 loss를 simplify할 수 있음
+
+    3. To sample $x_{t-1}$~$p_{\theta}(x_{t-1}|x_t)$
+
+        compute
+
+        ![Untitled](https://agency301.github.io/assets/img/DDPM/Untitled%2014.png)
+
+        → reparameterization trick, z는 N(0, I)
+
+### Other source
+
+[Diffusion Model 입문하기](https://velog.io/@bismute/Diffusion-Model-입문하기)
+
+[Denoising Diffusion Probabilistic Models 논문 리뷰 (DDPM 설명, DDPM 증명)](https://process-mining.tistory.com/188)
+
+[[Concept] Diffusion Models ( with. DDPM )](https://hyoseok-personality.tistory.com/entry/Concept-Diffusion-Models-with-DDPM-DDIM)
