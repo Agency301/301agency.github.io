@@ -14,5 +14,5 @@ layout: home
 {:.related-posts.faded}
 
 
-[블로그 작성기 1]: ./2023-07-29-Record1/
-[블로그 작성기 2]: ./2023-07-29-Record2/
+[블로그 작성기 1]: ./others/2023-07-29-Record1/
+[블로그 작성기 2]: ./others/2023-07-29-Record2/
