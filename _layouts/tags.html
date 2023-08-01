@@ -25,6 +25,7 @@ layout: page
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      white-space: nowrap; 
     }
     
     .tag {
@@ -36,12 +37,21 @@ layout: page
       cursor: pointer;
     }
 
+    .tag {
+        display: inline-block;
+        padding: 4px 8px; 
+        margin: 4px; 
+        border-radius: 8px; 
+        cursor: pointer;
+        color: #fff;
+    }
+
     .tag-space {
         height: 20px;
     }
     
     .tag.selected {
-      background-color: #007bff;
+      background-color: black;
       color: white;
     }
 
@@ -79,6 +89,30 @@ layout: page
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+
+/* random color logic */
+
+function getRandomColor() {
+    const hue = Math.floor(Math.random() * 360); // Random hue (0-359)
+  const saturation = 25 + Math.floor(Math.random() * 50); // Random saturation (25-75)
+  const lightness = 70 + Math.floor(Math.random() * 10); // Random lightness (70-80)
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
+    
+$(document).ready(() => {
+    $("[data-tag]").each((index, elem) => {
+        const randomColor = getRandomColor();
+        $(elem).css('background-color', randomColor);
+    });
+    
+    $("[data-tag]").click((e) => {
+        const currentTag = e.target.dataset.tag;
+        filterByTagName(currentTag);
+    });
+});
+
+/* filtering logic */
+
 $(document).ready(() => {
   $("[data-tag]").click((e) => {
     const currentTag = e.target.dataset.tag;
