@@ -112,6 +112,12 @@ $(document).ready(() => {
     });
 });
 
+function fetchFormatYAML() {
+  const response = fetch('_data/format.yml');
+  const text = response.text();
+  return jsyaml.load(text);
+}
+
 /* filtering logic */
 function filterByTagName(tagName) {
     if (tagName === 'show_all') { 
@@ -120,7 +126,8 @@ function filterByTagName(tagName) {
         $('.hidden').removeClass('hidden');
 
         $('.tag-wrapper').each((index, elem) => {
-          $(elem).html('<strong>태그: '+tagName+' 을 포함한 포스트</strong>');
+          const fTagInfo = format.tags.find(tag => tag.name === tagName);
+          $(elem).html('<h3>Tag ['+fTagName+'] 을 포함한 포스트</h3>');
         });
 
         $('.tag-link').each((index, elem) => {
