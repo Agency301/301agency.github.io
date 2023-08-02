@@ -22,11 +22,6 @@ layout: base
 {% assign minor = version[1] | plus:0 %}
 {% assign patch = version[2] | plus:0 %}
 
-
-{% assign authors_start = default:"at " %}
-{% assign authors_separator = default:", "  %}
-{% include tag-list.html tags=post.authors meta=site.authors start_with=authors_start separator=authors_separator %}
-
 {% include_cached components/post.html post=page no_link_title=true no_excerpt=true hide_image=page.hide_image hide_description=page.hide_description %}
 
 {% include components/dingbat.html %}
