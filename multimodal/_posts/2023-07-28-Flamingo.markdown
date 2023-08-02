@@ -5,7 +5,7 @@ date:   2023-07-28 13:21:37 +0900
 categories: multimodal
 tags: [vlm]
 author: Cufft
-authors: [Cufft]
+authors: [cufft]
 use_math: true
 ---
 
