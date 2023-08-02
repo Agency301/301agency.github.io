@@ -59,6 +59,8 @@ layout: page
 
 <div class="tag-space"></div>
 
+<div class="tag-wrapper"></div>
+
 {% for post in site.posts %}
   <div class="post-wrapper"
     {% if post.tags %}
@@ -106,6 +108,11 @@ function filterByTagName(tagName) {
         $('.post-wrapper').removeClass('hidden'); 
     } else {
         $('.hidden').removeClass('hidden');
+
+        $('.tag-wrapper').each((index, elem) => {
+          $(elem).text(tagName);
+        });
+
         $('.post-wrapper').each((index, elem) => {
           if (!elem.hasAttribute(`data-${tagName}`)) {
             $(elem).addClass('hidden');
