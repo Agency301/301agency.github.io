@@ -9,6 +9,11 @@ use_math: true
 
 -----------------------------
 
+
+1. this ordered seed list will be replaced by the toc
+{:toc}
+
+
 # Symbolic Discovery of Optimization Algorithms (2023.5)
 
 ## [Symbolic Discovery of Optimization Algorithms](https://arxiv.org/abs/2302.06675)
