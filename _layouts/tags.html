@@ -117,8 +117,14 @@ $(document).ready(() => {
 function filterByTagName(tagName, formattedTagName) {
     if (tagName === 'show_all') { 
         $('.post-wrapper').removeClass('hidden'); 
-        $('.tag-wrapper').hide()
-        $('.tag-link').hide()
+
+        $('.tag-link').each((index, elem) => {
+          $(elem).css('display', 'none');
+        });
+        $('.tag-wrapper').each((index, elem) => {
+          $(elem).css('display', 'none');
+        });
+
         
     } else {
         $('.hidden').removeClass('hidden');
