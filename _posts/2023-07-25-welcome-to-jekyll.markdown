@@ -11,7 +11,7 @@ use_math: true
 
 
 1. test
-{:.toc}
+{:toc}
 
 # Symbolic Discovery of Optimization Algorithms (2023.5)
 
