@@ -59,6 +59,8 @@ layout: page
 
 <div class="tag-space"></div>
 
+<div>
+
 {% for post in site.posts %}
   <div class="post-wrapper"
     {% if post.tags %}
@@ -116,4 +118,6 @@ function filterByTagName(tagName) {
       $(`.tag`).removeClass('selected');
       $(`.tag[data-tag=${tagName}]`).addClass('selected');
     }
+
+
 </script>
