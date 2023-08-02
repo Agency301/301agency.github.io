@@ -119,15 +119,22 @@ function filterByTagName(tagName, formattedTagName) {
         $('.post-wrapper').removeClass('hidden'); 
 
         $('.tag-link').each((index, elem) => {
-          $(elem).css('display', 'none');
+          $(elem).hide()
         });
         $('.tag-wrapper').each((index, elem) => {
-          $(elem).css('display', 'none');
+          $(elem).hide()
         });
 
         
     } else {
         $('.hidden').removeClass('hidden');
+
+        $('.tag-link').each((index, elem) => {
+          $(elem).show()
+        });
+        $('.tag-wrapper').each((index, elem) => {
+          $(elem).show()
+        });
 
         $('.tag-wrapper').each((index, elem) => {
           $(elem).text('Tag ['+formattedTagName+']을 포함한 포스트');
