@@ -37,7 +37,7 @@ layout: page
     }
 
     .tag-space {
-        height: 60px;
+        height: 30px;
     }
 
     .hidden {
@@ -59,7 +59,10 @@ layout: page
 
 <div class="tag-space"></div>
 
-<div class="tag-wrapper"></div>
+<a class="tag-wrapper"></a>
+
+<div class="tag-space"></div>
+
 
 {% for post in site.posts %}
   <div class="post-wrapper"
@@ -110,7 +113,8 @@ function filterByTagName(tagName) {
         $('.hidden').removeClass('hidden');
 
         $('.tag-wrapper').each((index, elem) => {
-          $(elem).text(tagName);
+          $(elem).text('태그 ['+tagName+'] 을 포함한 포스트');
+          $(elem).attr('href', 'https://agency301.github.io/tag-'+tagName+'/')
         });
 
         $('.post-wrapper').each((index, elem) => {
