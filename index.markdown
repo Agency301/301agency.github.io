@@ -5,14 +5,8 @@
 layout: home
 ---
 
-평범하지 않은 저희의 일상입니다.
+## Welcome to 301 Agency!
+{:.lead}
 
-## 블로그 작성기
-* [블로그 작성기 1]{:.heading.flip-title} --- 2023년 7월 29일
-* [블로그 작성기 2]{:.heading.flip-title} --- 2023년 7월 30일
-
-{:.related-posts.faded}
-
-
-[블로그 작성기 1]: ./others/2023-07-29-Record1/
-[블로그 작성기 2]: ./others/2023-07-29-Record2/
+# 블로그 소개
+안녕하세요. 다양한 AI 분야의 논문, 지식을 다루는 블로그 301 Agency 입니다. 
