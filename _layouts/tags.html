@@ -37,7 +37,7 @@ layout: page
     }
 
     .tag-space {
-        height: 30px;
+        height: 10px;
     }
 
     .hidden {
@@ -117,6 +117,9 @@ $(document).ready(() => {
 function filterByTagName(tagName, formattedTagName) {
     if (tagName === 'show_all') { 
         $('.post-wrapper').removeClass('hidden'); 
+        $('.tag-wrapper').hide()
+        $('.tag-link').hide()
+        
     } else {
         $('.hidden').removeClass('hidden');
 
