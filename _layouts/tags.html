@@ -78,9 +78,9 @@ layout: page
 
 /* random color logic */
 function getRandomColor() {
-  const letters = '789ABCDEF';
+  const letters = '0123456789AB';
   let color = '#';
-  const value = letters[Math.floor(Math.random() * 9)];
+  const value = letters[Math.floor(Math.random() * 12)];
 
   for (let i = 0; i < 6; i++) {
     color += value
