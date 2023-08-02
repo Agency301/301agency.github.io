@@ -17,7 +17,7 @@
 layout: page
 ---
 
-{% for post in site.my_collection %}
+{% for post in site.authors %}
 {% if post.authors contains page.slug%}
    <li>
   <a href="{{ post.url | relative_url }}" class="h4 flip-title">
