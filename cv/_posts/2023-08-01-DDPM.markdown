@@ -10,6 +10,8 @@ comments: true
 use_math: true
 ---
 
+{:toc}
+
 # Denoising Diffusion Probabilistic Models(DDPM)
 
 
