@@ -120,7 +120,7 @@ function filterByTagName(tagName) {
         $('.hidden').removeClass('hidden');
 
         $('.tag-wrapper').each((index, elem) => {
-          $(elem).html('### 태그: '+tagName+' 을 포함한 포스트');
+          $(elem).html('<strong>태그: '+tagName+' 을 포함한 포스트</strong>');
         });
 
         $('.tag-link').each((index, elem) => {
