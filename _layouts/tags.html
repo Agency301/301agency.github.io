@@ -39,16 +39,19 @@ layout: page
     .tag-space {
         height: 60px;
     }
-    
-    .tag.selected {
-      background-color: black;
-      color: white;
-    }
 
     .hidden {
         display: none !important;
     }
 
+<<<<<<< HEAD
+=======
+    .tag.selected {
+        background-color: #fff;
+        color: white;
+    }
+
+>>>>>>> cf444a19f49fdd83866c520bd2e0292206b3ffd9
 </style>
 
 <div class="tag-box">
@@ -57,6 +60,8 @@ layout: page
       <span class="tag" data-tag="{{ tag }}">{{ site.data.format[tag] }}</span>
     {% endfor %}
 </div>
+
+<div class="tag-space"></div>
 
 {% for post in site.posts %}
   <div class="post-wrapper"
@@ -76,14 +81,16 @@ layout: page
 
 /* random color logic */
 function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+  const letters = '789ABCDEF';
+  let color = '#';
+  const value = letters[Math.floor(Math.random() * 9)];
+
+  for (let i = 0; i < 6; i++) {
+    color += value
   }
   
+  return color;
+}
 
 $(document).ready(() => {
     $("[data-tag]").each((index, elem) => {
