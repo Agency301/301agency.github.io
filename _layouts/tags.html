@@ -64,7 +64,9 @@ layout: page
 <div class="tag-space"></div>
 
 <div class="tag-description">
-  <div class="tag-wrapper"></div>
+  <div class="tag-wrapper">
+    <h3>Tag [{{ site.data.format[tagName].display_name }}]을 포함한 포스트</h3>
+  </div>
   <a class="tag-link"></a>
 </div>
 
@@ -108,19 +110,20 @@ $(document).ready(() => {
     
     $("[data-tag]").click((e) => {
         const currentTag = e.target.dataset.tag;
-        filterByTagName(currentTag);
+        const formattedTag = e.target.innerText;
+        filterByTagName(currentTag, formattedTag);
     });
 });
 
 /* filtering logic */
-function filterByTagName(tagName) {
+function filterByTagName(tagName, formattedTagName) {
     if (tagName === 'show_all') { 
         $('.post-wrapper').removeClass('hidden'); 
     } else {
         $('.hidden').removeClass('hidden');
 
         $('.tag-wrapper').each((index, elem) => {
-          $(elem).html('<h3>Tag [{{ site.data.format["'+tagName+'"] }}]을 포함한 포스트</h3>');
+          $(elem).html('<h3>Tag ['+formattedTagName+']을 포함한 포스트</h3>');
         });
 
         $('.tag-link').each((index, elem) => {
@@ -137,4 +140,5 @@ function filterByTagName(tagName) {
       $(`.tag`).removeClass('selected');
       $(`.tag[data-tag=${tagName}]`).addClass('selected');
     }
+
 </script>
