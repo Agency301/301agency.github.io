@@ -188,6 +188,11 @@ defaults:
     values:
       seo:
         type:          WebPage
+  - scope:
+      type:            authors
+    values:
+      seo:
+        type:          WebPage
 
 kramdown:
   math_engine:         katex

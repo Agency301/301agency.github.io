@@ -4,6 +4,8 @@ title:  "ImageBind"
 date:   2023-07-28 12:53:26 +0900
 categories: multimodal
 tags: [vlm]
+author: Cufft
+authors: [Cufft]
 use_math: true
 ---
     

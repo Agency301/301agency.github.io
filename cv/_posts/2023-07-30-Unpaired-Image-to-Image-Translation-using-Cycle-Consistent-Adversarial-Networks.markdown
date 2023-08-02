@@ -4,6 +4,8 @@ title:  "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial 
 date:   2023-07-30 16:49:21 +0900
 categories: Computer-Vision
 tags: [gan]
+author: AtlasYang
+authors: [AtlasYang]
 comments: true
 use_math: true
 ---
