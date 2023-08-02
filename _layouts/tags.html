@@ -78,14 +78,15 @@ layout: page
 
 /* random color logic */
 function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let grayColor = '#';
+  const letters = '456789ABCDEF';
+  let color = '#';
+  const value = letters[Math.floor(Math.random() * 12)];
+
+  for (let i = 0; i < 6; i++) {
+    color += value
+  }
   
-  // Generate a random 2-digit hexadecimal value for grayscale
-  const grayValue = letters[Math.floor(Math.random() * 16)];
-  grayColor += grayValue.repeat(6); // Repeat the 2-digit value to form '#xxxxxx'
-  
-  return grayColor;
+  return color;
 }
 
 $(document).ready(() => {
