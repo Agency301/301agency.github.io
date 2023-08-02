@@ -398,11 +398,11 @@ plugins:
 #   admins:              <id>
 
 # Used on index and about sites
-# social:
-#   name:                <firstname> <lastname>
-#   links:
-#     - https://twitter.com/<username>
-#     - https://github.com/<username>
+social:
+   name:   Agency 301
+   links:
+     - https://twitter.com/<username>
+     - https://github.com/Agency301
 
 
 # Plugin Configs
