@@ -10,7 +10,7 @@ slug: nc
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  Neural Computing
+  Neural Computing은 인간 뇌의 정보 처리의 병렬 분산 처리 원리를 연구하는 분야입니다.
 
 # (Optional) You can disable grouping posts by date.
 # no_groups: true

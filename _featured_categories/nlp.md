@@ -10,7 +10,7 @@ slug: nlp
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  자, 연어입니다
+  자연어 처리는 컴퓨터 인간의 언어를 이해하고 생성, 조작할 수 있도록 하는 분야입니다.
 
 # (Optional) You can disable grouping posts by date.
 # no_groups: true
