@@ -337,6 +337,10 @@ collections:
     permalink:         /projects/:path/
     output:            true
 
+  authors:
+    permalink:         /author-:name/
+    output:            true
+
 
 # File inclusion/exclusion
 # ----------------------------------------------------------------------------------------
