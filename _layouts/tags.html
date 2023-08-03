@@ -149,13 +149,14 @@ $(document).ready(() => {
     $("[data-tag]").each((index, elem) => {
         const randomColor = getRandomColor();
         $(elem).css('background-color', randomColor);
+
+        if(elem.target.innerText === 'all') {
+          $('.tag-wrapper').each((index, elem) => {
+            $(elem).css('background-color', randomColor);
+          });
+        };
     });
 
-    $("[data-tag]").each((index, elem) => {
-      const randomColor = getRandomColor();
-      $(elem).css('background-color', randomColor);
-  });
-    
     $("[data-tag]").click((e) => {
         const currentTag = e.target.dataset.tag;
         const formattedTag = e.target.innerText;
@@ -170,13 +171,8 @@ $(document).ready(() => {
 
 /* filtering logic */
 function filterByTagName(tagName, formattedTagName) {
-    if (tagName === 'show_all') { 
+    if (tagName === 'all') { 
         $('.post-wrapper').removeClass('hidden'); 
-
-        $('.tag-wrapper').each((index, elem) => {
-          $(elem).text('전체');
-        });
-        
         $('.tag-link').each((index, elem) => {
           $(elem).hide()
         });
