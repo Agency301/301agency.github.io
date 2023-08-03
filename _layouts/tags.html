@@ -217,13 +217,13 @@ function filterByTagName(tagName, formattedTagName) {
     }
 
     function updateDateTime() {
-      const postListItem = document.querySelector('.post-list-item');
-      const postDatetime = postListItem.getAttribute('datetime');
-      const timeText = postListToTime(postDatetime);
-      const timeElement = document.createElement('time');
-      timeElement.className = 'faded fine';
-      timeElement.textContent = timeText;
-      postListItem.appendChild(timeElement);
+      $('.post-list-item').each((index, elem) => {
+        const postDatetime = $(elem).getAttribute('datetime');
+        const timeText = postListToTime(postDatetime);
+        const timeElement = document.createElement('time');
+        $(elem).html('<time class="faded fine">'+timeText+'</time>');
+      });
+      
     }
 
 
