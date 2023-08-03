@@ -96,6 +96,7 @@ layout: page
 
 <div class="tag-space"></div>
 
+{{ clicked_tag }}
 
 {% assign date_formats  = site.data.strings.date_formats               %}
 {% assign list_group_by = date_formats.list_group_by | default:"%Y"    %}
@@ -172,7 +173,7 @@ $(document).ready(() => {
     $("[data-tag]").click((e) => {
         const currentTag = e.target.dataset.tag;
         const formattedTag = e.target.innerText;
-        
+
         clicked_tag = currentTag
         filterByTagName(currentTag, formattedTag);
 
