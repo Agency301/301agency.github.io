@@ -101,7 +101,7 @@ layout: page
 
 {% assign prev_date = "" %}
 {% for post in site.posts %}
-  <div class="post-wrapper"
+  <span class="post-wrapper"
     {% if post.tags %}
       {% for tag in post.tags %}
         data-{{ tag }}
@@ -109,7 +109,7 @@ layout: page
     {% endif %}
   >
     {% include_cached components/post-list-item.html post=post format=list_entry %}
-  </div>
+  </span>
 {% endfor %}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
