@@ -72,7 +72,10 @@ layout: page
     }
 
     .post-wrapper {
-      margin-bottom: 2px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 2px;
     }
 
 </style>
@@ -97,19 +100,20 @@ layout: page
 <div class="tag-space"></div>
 
 {% assign date_formats  = site.data.strings.date_formats               %}
-{% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
+{% assign list_entry    = date_formats.list_entry    | default:"%d %b, %y" %}
 
 {% assign prev_date = "" %}
 {% for post in site.posts %}
-  <span class="post-wrapper"
+  <div class="post-wrapper"
     {% if post.tags %}
       {% for tag in post.tags %}
         data-{{ tag }}
       {% endfor %}
     {% endif %}
   >
-    {% include_cached components/post-list-item.html post=post format=list_entry %}
-  </span>
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <div class="post-list-item"></div>
+  </div>
 {% endfor %}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -129,7 +133,7 @@ function getRandomColor() {
 }
 
 $(document).ready(() => {
-  let clicked_tag = 'all';
+    updateDateTime()
 
     $("[data-tag]").each((index, elem) => {
         const randomColor = getRandomColor();
@@ -152,6 +156,8 @@ $(document).ready(() => {
           $(elem).text(formattedTag);
           $(elem).css('background-color', $(e.target).css('background-color'));
         });
+
+        updateDateTime()
     });
 });
 
@@ -192,5 +198,33 @@ function filterByTagName(tagName, formattedTagName) {
       $(`.tag`).removeClass('selected');
       $(`.tag[data-tag=${tagName}]`).addClass('selected');
     }
+
+    function postListToTime(datetimeString) {
+      const date = new Date(datetimeString);
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const year = date.getFullYear();
+      return `${day} ${getMonthName(month)} ${year}`;
+    }
+  
+    // getMonthName 함수: 월 숫자를 받아서 해당하는 월 이름을 반환
+    function getMonthName(month) {
+      const monthNames = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      ];
+      return monthNames[parseInt(month) - 1] || '';
+    }
+
+    function updateDateTime() {
+      const postListItem = document.querySelector('.post-list-item');
+      const postDatetime = postListItem.getAttribute('datetime');
+      const timeText = postListToTime(postDatetime);
+      const timeElement = document.createElement('time');
+      timeElement.className = 'faded fine';
+      timeElement.textContent = timeText;
+      postListItem.appendChild(timeElement);
+    }
+
 
 </script>
