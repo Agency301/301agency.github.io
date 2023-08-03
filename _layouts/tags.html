@@ -62,7 +62,7 @@ layout: page
         margin: 2px; 
         border-radius: 6px; 
         cursor: pointer;
-        color: #fff;
+        color: #000;
     }
 
     .tag-link, .tag-head, .tag-tail {
@@ -149,11 +149,21 @@ $(document).ready(() => {
         const randomColor = getRandomColor();
         $(elem).css('background-color', randomColor);
     });
+
+    $("[data-tag]").each((index, elem) => {
+      const randomColor = getRandomColor();
+      $(elem).css('background-color', randomColor);
+  });
     
     $("[data-tag]").click((e) => {
         const currentTag = e.target.dataset.tag;
         const formattedTag = e.target.innerText;
         filterByTagName(currentTag, formattedTag);
+
+        $('.tag-wrapper').each((index, elem) => {
+          $(elem).text(formattedTag);
+          $(elem).css('background-color', $(e.target).css('background-color'));
+        });
     });
 });
 
