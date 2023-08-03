@@ -68,6 +68,10 @@ layout: page
       margin: 1px; 
     }
 
+    .post-wrapper {
+      margin-bottom: 2px;
+    }
+
 </style>
 
 <div class="tag-box">
@@ -113,7 +117,7 @@ layout: page
   >
   {% include_cached components/post-list-item.html post=post format=list_entry %}
   </div>
-  
+
   {% if forloop.last %}</ul>{% endif %}
 {% endfor %}
 
