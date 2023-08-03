@@ -63,7 +63,6 @@ layout: page
         border-radius: 6px; 
         cursor: pointer;
         color: #fff;
-        background-color: #000;
     }
 
     .tag-link, .tag-head, .tag-tail {
@@ -151,8 +150,8 @@ $(document).ready(() => {
         $(elem).css('background-color', randomColor);
 
         if(elem.target.innerText === 'all') {
-          $('.tag-wrapper').each((index, elem) => {
-            $(elem).css('background-color', randomColor);
+          $('.tag-wrapper').each((index, elem2) => {
+            $(elem2).css('background-color', randomColor);
           });
         };
     });
