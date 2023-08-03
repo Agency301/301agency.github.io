@@ -97,64 +97,46 @@ layout: page
 <div class="tag-space"></div>
 
 
-{% assign posts = site.categories[page.slug] | default:site.tags[page.slug]  | default:site.authors[page.slug] | default:site.posts %}
-{% assign date_formats  = site.data.strings.date_formats               %}
-{% assign list_group_by = date_formats.list_group_by | default:"%Y"    %}
-{% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
-
-{% assign prev_date = 0 %}
-{% if page.no_groups %}<ul class="related-posts">{% endif %}
-{% for post in posts %}
-{% if post.author contains page.slug%}
-  {% assign current_date = post.date | date:list_group_by %}
-  {% unless page.no_groups %}{% if current_date != prev_date %}
-    {% unless forloop.first %}</ul>{% endunless %}
-    <h2 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h2>
-    <ul class="related-posts">
-    {% assign prev_date = current_date %}
-  {% endif %}{% endunless %}
-
-  <li class="post-list-item" data-tags="{{ post.tags | join: ',' }}">
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p class="post-meta">{{ post.date | date: list_entry }}</p>
-  </li>
-
-  {% if forloop.last %}</ul>{% endif %}
-
-{% endif%}
-{% endfor %}
-
-<!--
 {% assign date_formats  = site.data.strings.date_formats               %}
 {% assign list_group_by = date_formats.list_group_by | default:"%Y"    %}
 {% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
 
 
-{% assign prev_date = 0 %}
-{% if page.no_groups %}<ul class="related-posts">{% endif %}
-
+{% assign prev_date = "" %}
 {% for post in site.posts %}
+{% if clicked_tag == "all" or post.tags contains clicked_tag %}
+
   {% assign current_date = post.date | date:list_group_by %}
-  {% unless page.no_groups %}{% if current_date != prev_date %}
-    {% unless forloop.first %}</ul>{% endunless %}
-    <h3 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h3>
-    <ul class="related-posts">
-    {% assign prev_date = current_date %}
-  {% endif %}{% endunless %}
+  {% assign next_date = post.next.date | date:list_group_by %}
   
-  <div class="post-wrapper"
-      {% if post.tags %}
-        {% for tag in post.tags %}
-          data-{{ tag }}
-        {% endfor %}
+  {% unless page.no_groups %}
+    {% if current_date != prev_date %}
+      {% if prev_date != "" %}</ul>{% endif %}
+      {% if current_date != next_date or forloop.last %}
+        <h2 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h2>
+        <ul class="related-posts">
       {% endif %}
+    {% endif %}
+    {% assign prev_date = current_date %}
+  {% endunless %}
+
+  <div class="post-wrapper"
+    {% if post.tags %}
+      {% for tag in post.tags %}
+        data-{{ tag }}
+      {% endfor %}
+    {% endif %}
   >
-  {% include_cached components/post-list-item.html post=post format=list_entry %}
+  <a href="{{ post.url }}">{{ post.title }}</a> 
   </div>
 
+  {% include_cached components/post-list-item.html post=post format=list_entry %}
+
   {% if forloop.last %}</ul>{% endif %}
+
+{% endif %}
 {% endfor %}
--->
+
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -174,6 +156,8 @@ function getRandomColor() {
 }
 
 $(document).ready(() => {
+  let clicked_tag = 'all';
+
     $("[data-tag]").each((index, elem) => {
         const randomColor = getRandomColor();
         $(elem).css('background-color', randomColor);
@@ -188,6 +172,8 @@ $(document).ready(() => {
     $("[data-tag]").click((e) => {
         const currentTag = e.target.dataset.tag;
         const formattedTag = e.target.innerText;
+        
+        clicked_tag = currentTag
         filterByTagName(currentTag, formattedTag);
 
         $('.tag-wrapper').each((index, elem) => {
