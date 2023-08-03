@@ -17,12 +17,9 @@
 layout: page
 ---
 
-{{ page.slug }}
+{% assign posts = site.categories[page.slug] | default:site.tags[page.slug]  | default:site.authors[page.slug] | default:site.posts %}
 
-{% for post in site.authors %}
-
-{{ post.author }}
-
+{% for post in posts %}
 
 {% if post.author contains page.slug%}
 <li>
@@ -33,4 +30,5 @@ layout: page
   {{ post.date | date:list_entry }}</time>
 </li>
 {% endif%}
+
 {% endfor %}
