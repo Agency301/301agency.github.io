@@ -149,7 +149,7 @@ $(document).ready(() => {
         const randomColor = getRandomColor();
         $(elem).css('background-color', randomColor);
 
-        if(elem.target.innerText === 'all') {
+        if(elem.target.innerText === 'All') {
           $('.tag-wrapper').each((index, elem2) => {
             $(elem2).css('background-color', randomColor);
           });
