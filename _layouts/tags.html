@@ -119,6 +119,35 @@ layout: page
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 
+  function postListToTime(datetimeString) {
+    const date = new Date(datetimeString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day} ${getMonthName(month)} ${year}`;
+  }
+
+  // getMonthName 함수: 월 숫자를 받아서 해당하는 월 이름을 반환
+  function getMonthName(month) {
+    const monthNames = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ];
+    return monthNames[parseInt(month) - 1] || '';
+  }
+
+  function updateDateTime() {
+    $('.post-list-item').each((index, elem) => {
+      const postDatetime = $(elem).getAttribute('datetime');
+      const timeText = postListToTime(postDatetime);
+      const timeElement = document.createElement('time');
+      $(elem).html('<time class="faded fine">'+timeText+'</time>');
+    });
+    
+  }
+
+
+
 /* random color logic */
 function getRandomColor() {
   const letters = '0123456789AB';
@@ -198,33 +227,5 @@ function filterByTagName(tagName, formattedTagName) {
       $(`.tag`).removeClass('selected');
       $(`.tag[data-tag=${tagName}]`).addClass('selected');
     }
-
-    function postListToTime(datetimeString) {
-      const date = new Date(datetimeString);
-      const day = date.getDate().toString().padStart(2, '0');
-      const month = (date.getMonth() + 1).toString().padStart(2, '0');
-      const year = date.getFullYear();
-      return `${day} ${getMonthName(month)} ${year}`;
-    }
-  
-    // getMonthName 함수: 월 숫자를 받아서 해당하는 월 이름을 반환
-    function getMonthName(month) {
-      const monthNames = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      ];
-      return monthNames[parseInt(month) - 1] || '';
-    }
-
-    function updateDateTime() {
-      $('.post-list-item').each((index, elem) => {
-        const postDatetime = $(elem).getAttribute('datetime');
-        const timeText = postListToTime(postDatetime);
-        const timeElement = document.createElement('time');
-        $(elem).html('<time class="faded fine">'+timeText+'</time>');
-      });
-      
-    }
-
 
 </script>
