@@ -91,35 +91,30 @@ layout: page
 {% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
 
 
-{% assign prev_date = "" %}
 {% for post in site.posts %}
-  {% assign current_date = post.date | date:list_group_by %}
-  {% assign next_date = post.next.date | date:list_group_by %}
-  
-  {% unless page.no_groups %}
-    {% if current_date != prev_date %}
-      {% if prev_date != "" %}</ul>{% endif %}
-      {% if current_date != next_date or forloop.last %}
-        <h2 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h2>
-        <ul class="related-posts">
-      {% endif %}
-    {% endif %}
-    {% assign prev_date = current_date %}
-  {% endunless %}
-
   <div class="post-wrapper"
-    {% if post.tags %}
-      {% for tag in post.tags %}
-        data-{{ tag }}
-      {% endfor %}
-    {% endif %}
+      {% if post.tags %}
+        {% for tag in post.tags %}
+          data-{{ tag }}
+        {% endfor %}
+      {% endif %}
   >
+
+  {% assign current_date = post.date | date:list_group_by %}
+  {% unless page.no_groups %}{% if current_date != prev_date %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <h2 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h2>
+    <ul class="related-posts">
+    {% assign prev_date = current_date %}
+  {% endif %}{% endunless %}
+
+  
   <a href="{{ post.url }}">{{ post.title }}</a> 
-  </div>
 
   {% if forloop.last %}</ul>{% endif %}
-{% endfor %}
 
+  </div>
+{% endfor %}
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
