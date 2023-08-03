@@ -92,6 +92,8 @@ layout: page
 {% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
 
 
+{% assign prev_date = 0 %}
+{% if page.no_groups %}<ul class="related-posts">{% endif %}
 
 {% for post in site.posts %}
   <div class="post-wrapper"
@@ -111,7 +113,6 @@ layout: page
   {% endif %}{% endunless %}
   
   {% include_cached components/post-list-item.html post=post format=list_entry %}
-
 
   {% if forloop.last %}</ul>{% endif %}
 
