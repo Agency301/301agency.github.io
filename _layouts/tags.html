@@ -105,8 +105,6 @@ layout: page
 
 {% assign prev_date = "" %}
 {% for post in site.posts %}
-{% if clicked_tag == "all" or post.tags contains clicked_tag %}
-
   {% assign current_date = post.date | date:list_group_by %}
   {% assign next_date = post.next.date | date:list_group_by %}
   
@@ -134,8 +132,6 @@ layout: page
   {% include_cached components/post-list-item.html post=post format=list_entry %}
 
   {% if forloop.last %}</ul>{% endif %}
-
-{% endif %}
 {% endfor %}
 
 
@@ -174,7 +170,6 @@ $(document).ready(() => {
         const currentTag = e.target.dataset.tag;
         const formattedTag = e.target.innerText;
 
-        clicked_tag = currentTag
         filterByTagName(currentTag, formattedTag);
 
         $('.tag-wrapper').each((index, elem) => {
