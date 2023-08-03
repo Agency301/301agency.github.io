@@ -21,10 +21,10 @@ layout: page
 
 {% for post in site.authors %}
 
-{{ post.authors }}
+{{ post.author }}
 
 
-{% if post.authors contains page.slug%}
+{% if post.author contains page.slug%}
 <li>
   <a href="{{ post.url | relative_url }}" class="h4 flip-title">
     <span>{{ post.title }}</span>
