@@ -104,7 +104,7 @@ ondrive:
 github:
   name: GitHub
   icon: icon-github
-  prepend: "https://github.com/"
+  prepend: "https://github.com/Agency301"
 npm:
   name: npm
   icon: icon-npm
