@@ -156,13 +156,14 @@ function filterByTagName(tagName, formattedTagName) {
     if (tagName === 'show_all') { 
         $('.post-wrapper').removeClass('hidden'); 
 
+        $('.tag-wrapper').each((index, elem) => {
+          $(elem).text('전체 포스트');
+        });
+        
         $('.tag-link').each((index, elem) => {
           $(elem).hide()
         });
-        $('.tag-wrapper').each((index, elem) => {
-          $(elem).hide()
-        });
-
+        
         
     } else {
         $('.hidden').removeClass('hidden');
