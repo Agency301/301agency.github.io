@@ -26,7 +26,7 @@ layout: page
 
   .tag {
     display: inline-block;
-    padding: 0px 0px; 
+    padding: 0px 5px; 
     margin: 0px 10px;
     border-radius: 6px; 
     cursor: pointer;
@@ -74,7 +74,7 @@ layout: page
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-  function generate_color(tag, seed) {
+  function getRandomColor(tag, seed) {
     const letters = '0123456789AB';
     let color = '#';
     const value = letters[(tag.charCodeAt(0) + seed * 12) % 12];
@@ -90,7 +90,7 @@ layout: page
     const seed = Math.random();
 
     $('.tag').each((index, elem) => {
-      $(elem).css('background-color', generate_color(elem.textContent, seed));
+      $(elem).css('background-color', generate_color(elem.textContent(), seed));
     });
 
   });
