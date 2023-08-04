@@ -91,6 +91,7 @@ layout: page
 
     $('.tag').each((index, elem) => {
       const tagText = elem.textContent;
+      $(elem).text(tagText + ' ' + seed + ' ' + getRandomColor(tagText, seed));
       $(elem).css('background-color', getRandomColor(tagText, seed));
     });
 
