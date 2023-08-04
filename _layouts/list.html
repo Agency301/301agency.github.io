@@ -24,12 +24,11 @@ layout: page
 
   .tag {
     display: inline-block;
-    padding: 1px 5px; 
-    margin: 1px 5px;
-    border-radius: 6px; 
+    padding: 0px 0px; 
+    margin: 0px 3px;
+    border-radius: 3px; 
     cursor: pointer;
     color: #fff;
-    background-color: aliceblue;
   }
 
 </style>
@@ -73,12 +72,10 @@ layout: page
   }
 
   $(document).ready(() => {
-
     var seed = Math.random();
 
     $('.tag').each((index, elem) => {
-      var tagText = elem.innerText;
-      $(elem).css('background-color', generate_color(tagText, seed));
+      $(elem).css('background-color', generate_color($(elem).innerText, seed));
     });
 
   });
