@@ -81,7 +81,7 @@ layout: page
       color += value;
     }
     
-    return color;
+    return '#555555';
   }
 
   $(document).ready(() => {
@@ -89,6 +89,7 @@ layout: page
 
     $('.tag').each((index, elem) => {
       $(elem).css('background-color', generate_color(elem.textContent, seed));
+      $(elem).text('----')
     });
 
   });
