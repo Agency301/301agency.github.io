@@ -81,14 +81,14 @@ layout: page
       color += value;
     }
     
-    return '#000000';
+    return color;
   }
 
   $(document).ready(() => {
-    var seed = Math.random();
+    const seed = Math.random();
 
     $('.tag').each((index, elem) => {
-      $(elem).css('background-color', generate_color($(elem).innerText, seed));
+      $(elem).css('background-color', generate_color($(elem).text(), seed));
     });
 
   });
