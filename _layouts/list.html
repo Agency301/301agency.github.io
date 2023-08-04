@@ -90,7 +90,8 @@ layout: page
     const seed = Math.random();
 
     $('.tag').each((index, elem) => {
-      $(elem).css('background-color', getRandomColor(elem.textContent(), seed));
+      const tagText = elem.textContent;
+      $(elem).css('background-color', getRandomColor(tagText, seed));
     });
 
   });
