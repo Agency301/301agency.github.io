@@ -3,3 +3,4 @@ transformer: Transformer
 gan: GAN
 vit: Vision-Transformer
 diffusion: Diffusion
+modeling: Modeling
