@@ -19,7 +19,7 @@ Paper Link:
 
 [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)
 
-CLIP의 주요 포인트 몇가지를 위주로 리뷰해보려고 합니다. 아직 댓글 기능을 활성화하기 전인지라, 내용에 관해 질문 사항이나 지적할 사항이 있다면 제 Bio를 참고하여 메일을 보내주신다면 감사하겠습니다.
+CLIP의 주요 포인트 몇가지를 위주로 리뷰해보려고 합니다. 
 
 먼저 CLIP이 어떤 연구인지에 대하여 대략적으로 살펴본 후, 어떤 Encoder들을 사용했는지, 어떤 Loss를 사용했는지를 소개하겠습니다. 마무리로 간단하게 CLIP Official Repository에 있는 소스코드를 살펴보겠습니다.
 
@@ -65,7 +65,7 @@ CLIP은 이러한 Contastive Loss를 사용하는 Contrastive Learning입니다.
 
 CLIP에서는 각 Batch마다 서로 유사한 텍스트-이미지 쌍을 N쌍씩 학습시킵니다. 즉, 텍스트-이미지 쌍 N개가 나오도록 텍스트 N개와 이미지 N개씩을 준비해야 합니다.
 
-이러한 텍스트 N개와 이미지 N개로부터 나올 수 있는 모든 조합의 텍스트-이미지 쌍을 만들면 N*N개의 쌍이 생깁니다. 이는 서로 유사한 텍스트-이미지 N쌍과 서로 유사하지 않은 텍스트-이미지 N*(N-1)쌍으로 이루어질 것입니다.
+이러한 텍스트 N개와 이미지 N개로부터 나올 수 있는 모든 조합의 텍스트-이미지 쌍을 만들면 N×N개의 쌍이 생깁니다. 이는 서로 유사한 텍스트-이미지 N쌍과 서로 유사하지 않은 텍스트-이미지 N×(N-1)쌍으로 이루어질 것입니다.
 
 아래 그림을 보는 것이 이해를 도울 것입니다. 그림에서 파란색으로 표시된 쌍들은 서로 유사한 Positive Pair이며, 표시되지 않은 쌍들은 서로 유사하지 않은 Negative Pair입니다.
 
@@ -73,7 +73,7 @@ CLIP에서는 각 Batch마다 서로 유사한 텍스트-이미지 쌍을 N쌍�
 
 유사도 메트릭 (similarity metric)으로는 코사인 유사도 (cosine similarity)를 사용합니다.
 
-N개의 Positive Pair에 대해서는 코사인 유사도를 Maximize하고 N*(N-1)개의 Negative Pair에 대해서는 코사인 유사도를 Minimize하도록 학습합니다.
+N개의 Positive Pair에 대해서는 코사인 유사도를 Maximize하고 N×(N-1)개의 Negative Pair에 대해서는 코사인 유사도를 Minimize하도록 학습합니다.
 
 구체적으로, Symmetric Cross Entropy Loss를 사용합니다. 위 그림 상에서 Row별로, Column별로 각각 Binary Cross Entropy Loss를 구한 후, 두 Loss 값의 산술평균한 것을 Final Loss로 삼아 학습시킵니다. 
 
