@@ -74,16 +74,16 @@ layout: page
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-  function getRandomColor(tag, seed) {
+  function getRandomColor(tagText, seed) {
     const letters = '0123456789AB';
     let color = '#';
-    const value = letters[(tag.charCodeAt(0) + seed * 12) % 12];
+    const value = letters[(tagText.charCodeAt(0) + seed * 12) % 12];
   
     for (let i = 0; i < 6; i++) {
       color += value;
     }
     
-    return color;
+    return '#666666';
   }
 
   $(document).ready(() => {
@@ -92,8 +92,6 @@ layout: page
     $('.tag').each((index, elem) => {
       const tagText = elem.textContent;
       $(elem).css('background-color', getRandomColor(tagText, seed));
-      $(elem).text(tagText+tagText);
-
     });
 
   });
