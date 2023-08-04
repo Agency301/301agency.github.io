@@ -21,6 +21,7 @@ layout: page
   .post-wrapper {
     display: 'flex';
     flex-direction: row;
+    gap: 5px;
   }
 
   .tag {
@@ -38,7 +39,7 @@ layout: page
   }
 
   .h4 {
-    margin: 0; 
+    margin: 5px; 
   }
 
 </style>
@@ -72,12 +73,14 @@ layout: page
 
 <script>
   function generate_color(tag, seed) {
-    var hash = seed;
-    for (var i = 0; i < tag.length; i++) {
-      hash = tag.charCodeAt(i) + (hash << 5) - hash;
+    const letters = '0123456789AB';
+    let color = '#';
+    const value = letters[(tag.charCodeAt(0) + seed * 12) % 12];
+  
+    for (let i = 0; i < 6; i++) {
+      color += value;
     }
-    var value = (hash % 12) * 17; 
-    var color = '#' + value.toString(16).padStart(2, '0').repeat(3);
+    
     return color;
   }
 
