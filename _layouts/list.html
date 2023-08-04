@@ -22,14 +22,10 @@ layout: page
     display: 'flex'
   }
 
-  .post-wrapper > * + * {
-    margin-left: 10px;
-  }
-
   .tag {
     display: inline-block;
     padding: 1px 5px; 
-    margin: 1px; 
+    margin: 1px 5px;
     border-radius: 6px; 
     cursor: pointer;
     color: #fff;
@@ -64,3 +60,27 @@ layout: page
 
   {% if forloop.last %}</ul>{% endif %}
 {% endfor %}
+
+<script>
+  function generate_grayscale_color(tag, seed) {
+    var hash = seed;
+    for (var i = 0; i < tag.length; i++) {
+      hash = tag.charCodeAt(i) + (hash << 5) - hash;
+    }
+    var value = (hash % 12) * 17; 
+    var color = '#' + value.toString(16).padStart(2, '0').repeat(3);
+    return color;
+  }
+
+  $(document).ready(() => {
+
+    var seed = Math.random();
+
+    $('.tag').each((index, elem) => {
+      var tagText = elem.innerText;
+      $(elem).css('background-color', generate_color(tagText, seed));
+    });
+
+  });
+  
+</script>
