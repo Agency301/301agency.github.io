@@ -77,7 +77,7 @@ layout: page
   function getRandomColor(tagText, seed) {
     const letters = '0123456789AB';
     let color = '#';
-    const value = letters[(tagText.charCodeAt(0) + seed * 12) % 12];
+    const value = letters[(tagText.charCodeAt(0) + Math.floor(seed * 12)) % 12];
   
     for (let i = 0; i < 6; i++) {
       color += value;
@@ -91,7 +91,6 @@ layout: page
 
     $('.tag').each((index, elem) => {
       const tagText = elem.textContent;
-      $(elem).text(' ' + tagText.charCodeAt(0) + ' ' + seed * 12 + ' ' + getRandomColor(tagText, seed));
       $(elem).css('background-color', getRandomColor(tagText, seed));
     });
 
