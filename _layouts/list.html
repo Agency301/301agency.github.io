@@ -83,7 +83,7 @@ layout: page
       color += value;
     }
     
-    return '#666666';
+    return color;
   }
 
   $(document).ready(() => {
@@ -91,7 +91,7 @@ layout: page
 
     $('.tag').each((index, elem) => {
       const tagText = elem.textContent;
-      $(elem).text(tagText + ' ' + seed + ' ' + getRandomColor(tagText, seed));
+      $(elem).text(' ' + tagText.charCodeAt(0) + ' ' + seed * 12 + ' ' + getRandomColor(tagText, seed));
       $(elem).css('background-color', getRandomColor(tagText, seed));
     });
 
