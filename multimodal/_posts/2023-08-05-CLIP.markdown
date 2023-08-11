@@ -4,7 +4,7 @@ title:  "이미지와 텍스트의 표현 공간을 통합한 CLIP 논문 리뷰
 date:   2023-08-05 02:13:45 +0900
 categories: multimodal
 author: Cufft
-tags: [embedding]
+tags: [embedding, transformer]
 comments: true
 use_math: true
 ---
