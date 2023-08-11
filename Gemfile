@@ -45,6 +45,8 @@ group :jekyll_plugins do
   gem "jekyll-titles-from-headings"
   gem "jekyll-include-cache"
   gem "kramdown-math-katex"
+  gem "katex"
+  gem "execjs"
   # Non-Github Pages plugins:
   gem "jekyll-last-modified-at"
   gem "jekyll-compose"
