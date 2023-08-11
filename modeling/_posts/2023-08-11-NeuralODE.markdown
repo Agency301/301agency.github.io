@@ -89,7 +89,7 @@ Derivation of (3)
 
 마지막으로, 결국 optimize 해야 하는 것은 model parameter $\theta$이므로, $\frac{dL}{d\theta}$를 구한다.
 
-**(4). $\frac{dL}{d\theta}$=$-\int_{t_N}^{t_0}$$\mathbf{a}(t)^T$$\frac{\partial{f(\mathbf{z}(t), t,\theta)}}{\partial{\theta}}dt$**
+**(4). $\frac{dL}{d\theta}=-\int_{t_N}^{t_0}\mathbf{a}(t)^T\frac{\partial{f(\mathbf{z}(t), t,\theta)}}{\partial{\theta}}dt$**
 
 Derivation of (4)
 
