@@ -4,3 +4,4 @@ gan: GAN
 vit: Vision-Transformer
 diffusion: Diffusion
 modeling: Modeling
+embedding: Embedding
