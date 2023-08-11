@@ -44,7 +44,7 @@ hidden state를 나타내는 함수의 derivative를 구하는 과정을 Ordinar
 
 residual network, recurrent network 등을 생각해보면 모델에 들어온 입력에 Transformation을 가하는데, 이는 시간 $t$에 대해 이산적인 sequence를 생성한다. 이를 hidden state $\bold{h}_t$와 model parameter $\theta_t$에 관한 식으로 나타내면 다음과 같다.
 
-$\bold{h}_{t+1}=\bold{h}_t+f(\bold{h}_t, \theta_t)$
+$$\bold{h}_{t+1}=\bold{h}_t+f(\bold{h}_t, \theta_t)$$
 
 하지만 만약에 hidden state를 계속 추가해서, 연속적인 시간에 대해 $\bold{h}_t$를 구할 수 있다면 어떨까? 이를 위해 다음과 같은 ODE를 구성한다.
 
