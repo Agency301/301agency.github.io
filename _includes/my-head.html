@@ -3,33 +3,6 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        TeX: {
-        equationNumbers: {
-            autoNumber: "AMS"
-        }
-        },
-        tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-    }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-        alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-        alert("Math Processing Error: "+message[1]);
-        });
-</script>
-<script type="text/javascript" async
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
-</script>
-{% if page.use_math %} {% include mathjax_support.html %} {% endif %}
-
 
 <script type="module">
     document.querySelector('hy-push-state').addEventListener('load', () => {
