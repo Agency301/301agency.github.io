@@ -102,7 +102,7 @@ markdown: kramdown
 #incremental: false
 
 kramdown:
-math_engine: katex
+math_engine: mathjax
 math_engine_opts: {}
 
 #footnote_backlink: "&#x21a9;&#xfe0e;"
@@ -195,7 +195,7 @@ defaults:
         type:          WebPage
 
 kramdown:
-  math_engine:         katex
+  math_engine:         mathjax
   math_engine_opts:    {}
   #footnote_backlink:   '&#x21a9;&#xfe0e;'
 
