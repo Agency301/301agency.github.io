@@ -10,9 +10,6 @@ katex: true
 use_math: true
 ---
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/markdown-it-katex@2.0.4/dist/markdown-it-katex.js"></script>
 
 1. toc
 {:toc}
