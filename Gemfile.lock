@@ -107,6 +107,7 @@ PLATFORMS
 
 DEPENDENCIES
   duktape
+  execjs
   jekyll (~> 4.1)
   jekyll-compose
   jekyll-default-layout
@@ -122,6 +123,7 @@ DEPENDENCIES
   jekyll-sitemap
   jekyll-theme-hydejack (~> 9.1)
   jekyll-titles-from-headings
+  katex
   kramdown-math-katex
   tzinfo-data
   wdm

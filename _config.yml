@@ -95,7 +95,7 @@ paginate_path:         /:num/
 
 
 # Conversion
-markdown: kramdown
+#markdown: kramdown
 #highlighter: rouge
 #lsi: false
 #excerpt_separator: "\n\n"
@@ -103,8 +103,7 @@ markdown: kramdown
 kramdown:
 math_engine: katex
 math_engine_opts: {}
-
-#footnote_backlink: "&#x21a9;&#xfe0e;"
+footnote_backlink:   '&#x21a9;&#xfe0e;'
 
 # Theme
 # ---------------------------------------------------------------------------------------
@@ -196,7 +195,7 @@ defaults:
 kramdown:
   math_engine:         katex
   math_engine_opts:    {}
-  #footnote_backlink:   '&#x21a9;&#xfe0e;'
+  footnote_backlink:   '&#x21a9;&#xfe0e;'
 
 
 # 3rd Party Integrations
