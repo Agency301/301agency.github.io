@@ -16,6 +16,26 @@
 
 layout: base
 ---
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css">
+</head>
+<body>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\[", right: "\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>
 
 {% assign version = jekyll.version | split:'.' %}
 {% assign major = version[0] | plus:0 %}
@@ -40,23 +60,3 @@ layout: base
   {% endcase %}
 {% endfor %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css">
-</head>
-<body>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "\\[", right: "\\]", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false }
-            ]
-        });
-    });
-    </script>
-</body>
-</html>
