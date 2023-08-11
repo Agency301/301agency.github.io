@@ -42,15 +42,15 @@ hidden state를 나타내는 함수의 derivative를 구하는 과정을 Ordinar
 
 #### Idea
 
-residual network, recurrent network 등을 생각해보면 모델에 들어온 입력에 Transformation을 가하는데, 이는 시간 $t$에 대해 이산적인 sequence를 생성한다. 이를 hidden state $\bold{h}_t$와 model parameter $\theta_t$에 관한 식으로 나타내면 다음과 같다.
+residual network, recurrent network 등을 생각해보면 모델에 들어온 입력에 Transformation을 가하는데, 이는 시간 $t$에 대해 이산적인 sequence를 생성한다. 이를 hidden state $\mathbf{h}_t$와 model parameter $\theta_t$에 관한 식으로 나타내면 다음과 같다.
 
-$\bold{h}_{t+1}=\bold{h}_t+f(\bold{h}_t, \theta_t)$
+$\mathbf{h}_{t+1}=\mathbf{h}_t+f(\mathbf{h}_t, \theta_t)$
 
-하지만 만약에 hidden state를 계속 추가해서, 연속적인 시간에 대해 $\bold{h}_t$를 구할 수 있다면 어떨까? 이를 위해 다음과 같은 ODE를 구성한다.
+하지만 만약에 hidden state를 계속 추가해서, 연속적인 시간에 대해 $\mathbf{h}_t$를 구할 수 있다면 어떨까? 이를 위해 다음과 같은 ODE를 구성한다.
 
-$\frac{d\bold{h}_t}{dt}=f(\bold{h}(t), t, \theta)$
+$\frac{d\mathbf{h}_t}{dt}=f(\mathbf{h}(t), t, \theta)$
 
-이를 이용하면 어떠한 연속적인 시점 $t$에 대해서도 model output $\bold{h}$를 구할 수 있을 것이다.
+이를 이용하면 어떠한 연속적인 시점 $t$에 대해서도 model output $\mathbf{h}$를 구할 수 있을 것이다.
 
 ### Continuous Backpropagation
 
@@ -58,19 +58,19 @@ Neural ODE 모델의 Backpropagation은 Euler method를 이용한 function appro
 
 ![IMG_0064.jpeg](https://agency301.github.io/assets/img/NeuralODE/IMG_0064.jpeg)
 
-위 그림과 같이 hidden state가 $\bold{z}(t_0)$에서 $\bold{z}(t_N)$로 mapping되는 과정을 보자. ODE solver을 통해 최종적으로 도출해야 하는 것은 dynamic parameter $\theta$에 대한 Loss의 gradient인 $\frac{\partial{L}}{\partial{\theta}}$와 $\bold{z}(t_0)$보다 이전 계층으로의 gradient 전파를 위한 $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}$이다.
+위 그림과 같이 hidden state가 $\mathbf{z}(t_0)$에서 $\mathbf{z}(t_N)$로 mapping되는 과정을 보자. ODE solver을 통해 최종적으로 도출해야 하는 것은 dynamic parameter $\theta$에 대한 Loss의 gradient인 $\frac{\partial{L}}{\partial{\theta}}$와 $\mathbf{z}(t_0)$보다 이전 계층으로의 gradient 전파를 위한 $\frac{\partial{L}}{\partial{\mathbf{z}(t_0)}}$이다.
 
 Loss는 scalar function이고, $f$는 neural network로 parameterize 되어 있다는 것에 주의하라.
 
-**(1). \\(L(\bold{z}(t_N))=L(\bold{z}(t_0)+\int_{t_0}^{t_N}f(\bold{z}(t),t,\theta)dt)\\)**
+**(1). $L(\mathbf{z}(t_N))=L(\mathbf{z}(t_0)+\int_{t_0}^{t_N}f(\mathbf{z}(t),t,\theta)dt)$**
 
 Derivation of (1)
 
 ![IMG_0055.jpeg](https://agency301.github.io/assets/img/NeuralODE/IMG_0055.jpeg)
 
-이제 $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}$와 $\frac{\partial{L}}{\partial{\theta}}$를 구해야 하는데, 이를 단번에 유도하기는 복잡하므로, adjoint $\bold{a}(t)=\frac{dL}{d\bold{z}(t)}$를 정의한다. adjoint $\bold{a}$는 어떤 시점 $t$에서의 상태 $\bold{z}$에 대한 Loss이다. adjoint는 다음과 같은 ODE를 통해 표현한다.
+이제 $\frac{\partial{L}}{\partial{\mathbf{z}(t_0)}}$와 $\frac{\partial{L}}{\partial{\theta}}$를 구해야 하는데, 이를 단번에 유도하기는 복잡하므로, adjoint $\mathbf{a}(t)=\frac{dL}{d\mathbf{z}(t)}$를 정의한다. adjoint $\mathbf{a}$는 어떤 시점 $t$에서의 상태 $\mathbf{z}$에 대한 Loss이다. adjoint는 다음과 같은 ODE를 통해 표현한다.
 
-**(2). $\frac{d\bold{a}(t)}{dt}=-\bold{a}^T\frac{\partial{f(\bold{z}(t), t, \theta)}}{\partial{\bold{z}(t)}}$**
+**(2). $\frac{d\mathbf{a}(t)}{dt}=-\mathbf{a}^T\frac{\partial{f(\mathbf{z}(t), t, \theta)}}{\partial{\mathbf{z}(t)}}$**
 
 Derivation of (2)
 
@@ -78,9 +78,9 @@ Derivation of (2)
 
 ![IMG_0057.jpeg](https://agency301.github.io/assets/img/NeuralODE/IMG_0057.jpeg)
 
-위의 adjoint 식 (2)를 Euler method에 적용시키면, $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}$를 구할 수 있다.
+위의 adjoint 식 (2)를 Euler method에 적용시키면, $\frac{\partial{L}}{\partial{\mathbf{z}(t_0)}}$를 구할 수 있다.
 
-**(3). $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}=\frac{\partial{L}}{\partial{\bold{z}(t_N)}}-\int^{t_0}_{t_N}\bold{a}(t)^T\frac{\partial{f(\bold{z}(t), t, \theta)}}{\partial{\bold{z}}(t)}dt$**
+**(3). $\frac{\partial{L}}{\partial{\mathbf{z}(t_0)}}=\frac{\partial{L}}{\partial{\mathbf{z}(t_N)}}-\int^{t_0}_{t_N}\mathbf{a}(t)^T\frac{\partial{f(\mathbf{z}(t), t, \theta)}}{\partial{\mathbf{z}}(t)}dt$**
 
 Derivation of (3)
 
@@ -88,7 +88,7 @@ Derivation of (3)
 
 마지막으로, 결국 optimize 해야 하는 것은 model parameter $\theta$이므로, $\frac{dL}{d\theta}$를 구한다.
 
-**(4). $\frac{dL}{d\theta}$=$-\int_{t_N}^{t_0}$$\bold{a}(t)^T$$\frac{\partial{f(\bold{z}(t), t,\theta)}}{\partial{\theta}}dt$**
+**(4). $\frac{dL}{d\theta}$=$-\int_{t_N}^{t_0}$$\mathbf{a}(t)^T$$\frac{\partial{f(\mathbf{z}(t), t,\theta)}}{\partial{\theta}}dt$**
 
 Derivation of (4)
 
