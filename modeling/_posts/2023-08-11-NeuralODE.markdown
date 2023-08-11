@@ -6,8 +6,8 @@ categories: Modeling
 author: AtlasYang
 tags: Modeling
 comments: true
-#katex: true
-#use_math: true
+katex: true
+use_math: true
 ---
 
 1. toc
@@ -62,7 +62,7 @@ Neural ODE 모델의 Backpropagation은 Euler method를 이용한 function appro
 
 Loss는 scalar function이고, $f$는 neural network로 parameterize 되어 있다는 것에 주의하라.
 
-#### (1). $L(\bold{z}(t_N))=L(\bold{z}(t_0)+\int_{t_0}^{t_N}f(\bold{z}(t),t,\theta)dt)$
+**(1). $L(\bold{z}(t_N))=L(\bold{z}(t_0)+\int_{t_0}^{t_N}f(\bold{z}(t),t,\theta)dt)$**
 
 Derivation of (1)
 
@@ -70,7 +70,7 @@ Derivation of (1)
 
 이제 $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}$와 $\frac{\partial{L}}{\partial{\theta}}$를 구해야 하는데, 이를 단번에 유도하기는 복잡하므로, adjoint $\bold{a}(t)=\frac{dL}{d\bold{z}(t)}$를 정의한다. adjoint $\bold{a}$는 어떤 시점 $t$에서의 상태 $\bold{z}$에 대한 Loss이다. adjoint는 다음과 같은 ODE를 통해 표현한다.
 
-#### (2). $\frac{d\bold{a}(t)}{dt}=-\bold{a}^T\frac{\partial{f(\bold{z}(t), t, \theta)}}{\partial{\bold{z}(t)}}$
+**(2). $\frac{d\bold{a}(t)}{dt}=-\bold{a}^T\frac{\partial{f(\bold{z}(t), t, \theta)}}{\partial{\bold{z}(t)}}$**
 
 Derivation of (2)
 
@@ -80,7 +80,7 @@ Derivation of (2)
 
 위의 adjoint 식 (2)를 Euler method에 적용시키면, $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}$를 구할 수 있다.
 
-#### (3). $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}=\frac{\partial{L}}{\partial{\bold{z}(t_N)}}-\int^{t_0}_{t_N}\bold{a}(t)^T\frac{\partial{f(\bold{z}(t), t, \theta)}}{\partial{\bold{z}}(t)}dt$
+**(3). $\frac{\partial{L}}{\partial{\bold{z}(t_0)}}=\frac{\partial{L}}{\partial{\bold{z}(t_N)}}-\int^{t_0}_{t_N}\bold{a}(t)^T\frac{\partial{f(\bold{z}(t), t, \theta)}}{\partial{\bold{z}}(t)}dt$**
 
 Derivation of (3)
 
@@ -88,7 +88,7 @@ Derivation of (3)
 
 마지막으로, 결국 optimize 해야 하는 것은 model parameter $\theta$이므로, $\frac{dL}{d\theta}$를 구한다.
 
-#### (4). $\frac{dL}{d\theta}$=$-\int_{t_N}^{t_0}$$\bold{a}(t)^T$$\frac{\partial{f(\bold{z}(t), t,\theta)}}{\partial{\theta}}dt$
+**(4). $\frac{dL}{d\theta}$=$-\int_{t_N}^{t_0}$$\bold{a}(t)^T$$\frac{\partial{f(\bold{z}(t), t,\theta)}}{\partial{\theta}}dt$**
 
 Derivation of (4)
 
