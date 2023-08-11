@@ -62,7 +62,7 @@ Neural ODE 모델의 Backpropagation은 Euler method를 이용한 function appro
 
 Loss는 scalar function이고, $f$는 neural network로 parameterize 되어 있다는 것에 주의하라.
 
-**(1). $L(\bold{z}(t_N))=L(\bold{z}(t_0)+\int_{t_0}^{t_N}f(\bold{z}(t),t,\theta)dt)$**
+**(1). \\(L(\bold{z}(t_N))=L(\bold{z}(t_0)+\int_{t_0}^{t_N}f(\bold{z}(t),t,\theta)dt)\\)**
 
 Derivation of (1)
 
@@ -124,10 +124,10 @@ Neural ODE는 기존의 이산적인 모델 구조에서 벗어나 연속적인 
 
 ## Related Works
 
-#### 1. Augmented Neural ODE
+#### Augmented Neural ODE
 
 [Augmented Neural ODEs](https://arxiv.org/abs/1904.01681)
 
-#### 2. Normalizing Flow
+#### Normalizing Flow
 
 [Variational Inference with Normalizing Flows](https://arxiv.org/abs/1505.05770)
