@@ -6,6 +6,7 @@ categories: Modeling
 author: AtlasYang
 tags: Modeling
 comments: true
+katex: true
 use_math: true
 ---
 
