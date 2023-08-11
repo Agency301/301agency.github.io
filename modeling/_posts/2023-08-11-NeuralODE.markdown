@@ -4,7 +4,7 @@ title:  "Neural ODE를 이용한 연속적인 계층을 가진 신경망 모델�
 date:   2023-08-11 20:18:10 +0900
 categories: Modeling
 author: AtlasYang
-tags: Modeling
+tags: modeling
 comments: true
 katex: true
 use_math: true
