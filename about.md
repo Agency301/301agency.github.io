@@ -20,7 +20,6 @@ redirect_from:
 
 Contact: agency.py.301@gmail.com
 
-$$ f(x) = x_i + y^4 $$
 
 # Members
 ----------
@@ -30,7 +29,6 @@ $$ f(x) = x_i + y^4 $$
 > Taking charge of Multi-modal, NLP Centers in 301 Agency
 > ### Organization
 > Seoul National University, Dept. of Computer Science & Engineering   
-> AttentionX   
 > 301 Agency, Director
 > ### Contact
 > E-mail: wisdomsword21@snu.ac.kr   
@@ -42,7 +40,6 @@ $$ f(x) = x_i + y^4 $$
 > Taking charge of CV, Learning Dynamics in 301 Agency
 > ### Organization
 > Seoul National University, Dept. of Computer Science & Engineering   
-> AttentionX   
 > 301 Agency, Agent 001
 > ### Contact
 > E-mail: epsilon2718@snu.ac.kr   
